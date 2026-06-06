@@ -589,7 +589,7 @@ nav {
 .school-name { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
 .school-principal { font-size: 11.5px; color: var(--text-muted); margin-bottom: 3px; }
 .school-location {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--text-faint);
   display: flex;
   align-items: center;
