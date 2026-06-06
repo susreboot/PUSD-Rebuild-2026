@@ -1273,3 +1273,92 @@ footer {
         flex-direction: column;
     }
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+#credential-verification {
+    /* Adjust the 100px to match the actual height of your header */
+    scroll-margin-top: 150px; 
+}
+
+/* Container for the grid */
+.news-image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Feature Image: Takes up full width (4 columns) */
+.feature-img {
+    grid-column: span 4;
+    width: 100%;
+    height: 300px; /* Keep this if you want a fixed-height container */
+    object-fit: contain; /* Change from 'cover' to 'contain' */
+    background-color: #f0f0f0; /* Optional: adds a background color if the image doesn't fill the container perfectly */
+    border-radius: 4px;
+}
+
+/* Gallery Images: Standard grid size */
+.gallery-img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .news-image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .feature-img {
+        grid-column: span 2; /* Span 2 on mobile */
+    }
+}
+
+/* Style for images that should fill the space (like Weaver) */
+.feature-fill {
+    grid-column: span 4;
+    width: 100%;
+    height: 300px;
+    object-fit: cover; 
+    border-radius: 4px;
+}
+
+/* Style for images that should show fully (like Lakin) */
+.feature-contain {
+    grid-column: span 4;
+    width: 100%;
+    height: 300px;
+    object-fit: contain; 
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.footer-col a {
+    display: block;
+    padding: 5px 0;
+    color: #ffffff; /* Adjust to match your footer theme */
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer-col a:hover {
+    opacity: 0.7;
+}
+
+/* Sub-link specific styling to match header hierarchy */
+.sub-link {
+    padding-left: 15px !important;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.footer-col h4 {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 1.1em;
+}

@@ -16,35 +16,35 @@
 
     <div class="hero-sidebar">
       <div class="hero-sidebar-title">Quick Access</div>
-      <a href="#" class="quick-link">
+      <a href="#credential-verification" class="quick-link">
         <div class="quick-link-icon"><i class="ti ti-certificate"></i></div>
         <div>
           <div class="quick-link-text">Credential Verification</div>
           <div class="quick-link-sub">Diplomas &amp; GED transcripts</div>
         </div>
       </a>
-      <a href="#" class="quick-link">
+      <a href="/pages/publicDocuments.php" class="quick-link">
         <div class="quick-link-icon"><i class="ti ti-file-text"></i></div>
         <div>
           <div class="quick-link-text">Public Documents</div>
           <div class="quick-link-sub">Budget, ESSER, policies</div>
         </div>
       </a>
-      <a href="#" class="quick-link">
+      <a href="/pages/publicDocuments.php" class="quick-link">
         <div class="quick-link-icon"><i class="ti ti-calendar-event"></i></div>
         <div>
           <div class="quick-link-text">Board Meetings</div>
-          <div class="quick-link-sub">Dates, minutes &amp; agendas</div>
+          <div class="quick-link-sub">Minutes &amp; agendas</div>
         </div>
       </a>
-      <a href="#" class="quick-link">
+      <a href="https://screportcards.com/" class="quick-link">
         <div class="quick-link-icon"><i class="ti ti-chart-bar"></i></div>
         <div>
           <div class="quick-link-text">District Report Card</div>
           <div class="quick-link-sub">SC state scorecard</div>
         </div>
       </a>
-      <a href="#" class="quick-link">
+      <a href="/pages/publicDocuments.php" class="quick-link">
         <div class="quick-link-icon"><i class="ti ti-award"></i></div>
         <div>
           <div class="quick-link-text">Strategic Plan</div>
@@ -61,10 +61,6 @@
           <div class="stat-item">
             <div class="stat-num">30+</div>
             <div class="stat-label">CTE Programs</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">80+</div>
-            <div class="stat-label">OJT Certificates</div>
           </div>
           <div class="stat-item">
             <div class="stat-num">12</div>
@@ -90,7 +86,7 @@
 
       <section class="programs-section">
         <div class="section-header">
-          <h2>Academic Programs</h2>
+          <h2>District Programs</h2>
           <div class="section-header-line"></div>
         </div>
         <div class="program-cards">
@@ -125,6 +121,11 @@
             <p class="prog-desc">Part D supplemental services focused on Reading/ELA, Math, and successful community transition.</p>
           </div>
         </div>
+
+        <div class="news-footer" style="text-align: center; margin-top: 40px;">
+          <a href="/pages/Programs.php" class="btn-primary">More Information</a>
+        </div>
+
       </section>
 
       <section id="school-directory">
@@ -325,7 +326,7 @@
 
       <div class="sidebar-card">
         <div class="sidebar-card-header">
-          <i class="ti ti-certificate"></i> Credential Verification
+          <i class="ti ti-certificate" id="credential-verification"></i> Credential Verification
         </div>
         <div class="sidebar-card-body">
           <p style="font-size:13px;color:var(--text-muted);line-height:1.65;margin-bottom:12px">

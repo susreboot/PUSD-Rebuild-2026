@@ -67,15 +67,25 @@ async function openModal(id) {
             const imgContainer = document.getElementById('modal-image-container');
             if (imgContainer) {
                 imgContainer.innerHTML = '';
-                let imagesToDisplay = Array.isArray(newsItem.images) ? newsItem.images : (newsItem.image ? [newsItem.image] : []);
-                
-                imagesToDisplay.forEach(src => {
+                // Add the grid class to the container
+                imgContainer.classList.add('news-image-grid'); 
+
+                let imagesToDisplay = Array.isArray(newsItem.images) ? newsItem.images : [];
+
+                imagesToDisplay.forEach((src, index) => {
                     const img = document.createElement('img');
-                    img.src = src; 
-                    img.className = 'modal-img';
+                    img.src = src;
+                    
+                    if (index === 0) {
+                        // Pick the class based on the JSON property, default to 'fill' if not set
+                        const styleClass = newsItem.image_style === 'contain' ? 'feature-contain' : 'feature-fill';
+                        img.className = `modal-img ${styleClass}`;
+                    } else {
+                        img.className = 'modal-img gallery-img';
+                    }
                     imgContainer.appendChild(img);
                 });
-            }
+                            }
             document.getElementById('news-modal').style.display = 'block';
         }
     } catch (err) {

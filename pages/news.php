@@ -14,4 +14,16 @@
     </main>
 </div>
 
+<div id="news-modal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2 id="modal-title"></h2>
+    
+    <!-- This is the container the JS will inject the grid into -->
+    <div id="modal-image-container"></div>
+    
+    <div id="modal-full-text"></div>
+  </div>
+</div>
+
 <?php include __DIR__ . '/../includes/footer.php'; ?>

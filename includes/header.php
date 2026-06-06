@@ -38,13 +38,15 @@
         <a href="#" class="active">District Overview <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
           <a href="/pages/about.php">About PUSD</a>
-          <a href="/pages/about.php">PUSD History</a>
+          <a href="/pages/about.php" class="sub-link">Beliefs &amp; Principles</a>
+          <a href="/pages/about.php" class="sub-link">Our Vision</a>
+          <a href="/pages/about.php" class="sub-link">Our Mission</a>
+          <a href="/pages/about.php" class="sub-link">Our History</a>
           <a href="/pages/calendar.php">District Calendar</a>
           <a href="#">Board of Trustees</a>
           <a href="/pages/Board of Trustees.php" class="sub-link">Board Members</a>
           <a href="/pages/publicDocuments.php" class="sub-link">Agendas & Minutes</a>
           <a href="#">Strategic Plan</a>
-          <a href="/pages/about.php">Beliefs &amp; Principles</a>
           <a href="/pages/publicDocuments.php">Public Documents</a>
           <a href="#">Non-Discrimination Policy</a>
           <a href="https://screportcards.com/" target="_blank">District Report Card</a>
@@ -71,8 +73,8 @@
       <div class="nav-item">
         <a href="#">Board of Trustees <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="#">Board Members</a>
-          <a href="#">Meetings &amp; Minutes</a>
+          <a href="/pages/Board of Trustees.php">Board Members</a>
+          <a href="/pages/publicDocuments.php">Agendas &amp; Minutes</a>
         </div>
       </div>
       <div class="nav-item"><a href="/pages/news.php">News</a></div>

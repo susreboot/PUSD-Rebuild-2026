@@ -22,7 +22,7 @@
           <p>Programs focus on Reading/Language Arts, Mathematics, and Writing skills for the GED, TASC, and WIN certificates. Increased education during incarceration is proven to reduce recidivism and improve post-release outcomes.</p>
           <blockquote>“Every dollar invested in correctional education saves nearly five dollars in reincarceration costs over three years.” ~ RAND Corporation</blockquote>
       </div>
-      
+
       <!-- Title I -->
       <div class="program-item">
           <h2>Title I</h2>
@@ -30,7 +30,7 @@
           <p><strong>Title I Schools:</strong> Allendale, Broad River, Camille Graham, Kirkland, Lee, MacDougall, Ridgeland, Manning, Tyger River, Trenton, Turbeville, and Wateree.</p>
       </div>
     </div>
-
+      <br>
       <!-- Career & Technical Education -->
       <div class="program-item large">
           <h2>Career and Technical Education (CTE)</h2>
@@ -47,7 +47,7 @@
           
           <p>In addition to classroom curricula, we offer SCDC-conjunction certificates in over 80 areas based on On-the-Job Training (OJT) competencies.</p>
       </div>
-
+      <br>
       <!-- Special Education -->
       <div class="program-item">
           <h2>Special Education Services (SES)</h2>

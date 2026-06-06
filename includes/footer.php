@@ -11,17 +11,18 @@
         </p>
       </div>
       <div class="footer-col">
-        <h4>District</h4>
-        <a href="/pages/about.php">About PUSD</a>
-        <a href="/pages/about.php">Beliefs &amp; Principles</a>
-        <a href="#">District Overview</a>
-        <a href="#">Strategic Plan</a>
-        <a href="/pages/Board of Trustees.php">Board of Trustees - Board Members</a>
-        <a href="/pages/publicDocuments.php">Board of Trustees - Agendas & Minutes</a>
-        <a href="/pages/publicDocuments.php">Organizational Chart</a>
-        <a href="https://screportcards.com/" target="_blank">District Report Card</a>
-        <a href="/pages/calendar.php">District Calendar</a>
-        <a href="/pages/about.php">History</a>
+          <h4>District</h4>
+          
+          <a href="/pages/about.php">About PUSD</a>
+          <a href="/pages/about.php" class="sub-link">Beliefs & Principles</a>
+          <a href="/pages/about.php" class="sub-link">History</a>
+          <a href="#">Board of Trustees</a>
+          <a href="/pages/Board of Trustees.php" class="sub-link">Board Members</a>
+          <a href="/pages/publicDocuments.php" class="sub-link">Agendas & Minutes</a>
+          <a href="#">Strategic Plan</a>
+          <a href="/pages/publicDocuments.php">Organizational Chart</a>
+          <a href="https://screportcards.com/" target="_blank">District Report Card</a>
+          <a href="/pages/calendar.php">District Calendar</a>
       </div>
       <div class="footer-col">
         <h4>Programs</h4>
