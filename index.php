@@ -9,7 +9,7 @@
         education to the incarcerated population of the SC Department of Corrections.
       </p>
       <div class="hero-ctas">
-        <a href="#" class="btn-primary"><i class="ti ti-briefcase"></i> Career Opportunities</a>
+        <a href="https://www.governmentjobs.com/careers/sc?department[0]=Department%20of%20Corrections&category[0]=Education%2C%20Training%20%26%20Library&category[1]=Education&sort=PositionTitle%7CAscending" target="_blank" class="btn-primary"><i class="ti ti-briefcase"></i> Career Opportunities</a>
         <a href="#school-directory" class="btn-outline"><i class="ti ti-school"></i> School Directory</a>
       </div>
     </div>

@@ -18,7 +18,7 @@
     <div class="util-bar-right">
       <span><i class="ti ti-phone"></i> (803) 896-1583</span>
       <a href="https://www.doc.sc.gov/" target="_blank">SCDC Website</a>
-      <a href="#">Careers</a>
+      <a href="https://www.governmentjobs.com/careers/sc?department[0]=Department%20of%20Corrections&category[0]=Education%2C%20Training%20%26%20Library&category[1]=Education&sort=PositionTitle%7CAscending" target="_blank">Careers</a>
     </div>
   </div>
 
@@ -37,33 +37,35 @@
       <div class="nav-item">
         <a href="#" class="active">District Overview <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="#">About PUSD</a>
+          <a href="/pages/about.php">About PUSD</a>
+          <a href="/pages/about.php">PUSD History</a>
           <a href="/pages/calendar.php">District Calendar</a>
+          <a href="#">Board of Trustees</a>
+          <a href="/pages/Board of Trustees.php" class="sub-link">Board Members</a>
+          <a href="/pages/publicDocuments.php" class="sub-link">Agendas & Minutes</a>
           <a href="#">Strategic Plan</a>
-          <a href="#">Beliefs &amp; Principles</a>
-          <a href="#">Organizational Chart</a>
+          <a href="/pages/about.php">Beliefs &amp; Principles</a>
           <a href="/pages/publicDocuments.php">Public Documents</a>
           <a href="#">Non-Discrimination Policy</a>
-          <a href="#">Teacher Pay Scale</a>
-          <a href="#">District Report Card</a>
+          <a href="https://screportcards.com/" target="_blank">District Report Card</a>
           <a href="https://www.doc.sc.gov/policy/policy.html" target="_blank">SCDOC/PUSD Policies</a>
         </div>
       </div>
       <div class="nav-item">
         <a href="#">Schools <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="#">High Schools (EFA)</a>
-          <a href="#">Adult Education Schools</a>
-          <a href="#">School Directory</a>
+          <a href="javascript:void(0);" onclick="handleTabClick('hs')">High Schools (EFA)</a>
+          <a href="javascript:void(0);" onclick="handleTabClick('ae')">Adult Education Schools</a>
+          <a href="javascript:void(0);" onclick="scrollToDirectory()">School Directory</a>
         </div>
       </div>
       <div class="nav-item">
         <a href="#">Programs <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="#">Career &amp; Technical Education</a>
-          <a href="#">Adult Basic Education</a>
-          <a href="#">Special Education Services</a>
-          <a href="#">Title I Programs</a>
+          <a href="/pages/Programs.php">Career &amp; Technical Education</a>
+          <a href="/pages/Programs.php">Adult Basic Education</a>
+          <a href="/pages/Programs.php">Special Education Services</a>
+          <a href="/pages/Programs.php">Title I Programs</a>
         </div>
       </div>
       <div class="nav-item">

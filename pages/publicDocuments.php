@@ -44,6 +44,16 @@
                 </div>
     </div>
 
+    <!-- Legal & Compliance Section -->
+    <div class="doc-section">
+        <h2>Legal & Compliance</h2>
+        <div class="doc-grid">
+            <a href="#" class="doc-card"><strong>Non-Discrimination Policy</strong> (PDF)</a>
+            <a href="#" class="doc-card"><strong>Title IX Coordinator Info</strong> (XLSX)</a>
+            <a href="#" class="doc-card"><strong>FOIA Procedures</strong> (PDF)</a>
+        </div>
+    </div>
+
     <!-- Financial Section -->
     <div class="doc-section">
         <h2>Financial Transparency</h2>

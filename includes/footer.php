@@ -12,23 +12,25 @@
       </div>
       <div class="footer-col">
         <h4>District</h4>
+        <a href="/pages/about.php">About PUSD</a>
+        <a href="/pages/about.php">Beliefs &amp; Principles</a>
         <a href="#">District Overview</a>
         <a href="#">Strategic Plan</a>
-        <a href="#">Board of Trustees</a>
-        <a href="#">Organizational Chart</a>
-        <a href="#">District Report Card</a>
-        <a href="#">District Calendar</a>
-        <a href="#">History</a>
+        <a href="/pages/Board of Trustees.php">Board of Trustees - Board Members</a>
+        <a href="/pages/publicDocuments.php">Board of Trustees - Agendas & Minutes</a>
+        <a href="/pages/publicDocuments.php">Organizational Chart</a>
+        <a href="https://screportcards.com/" target="_blank">District Report Card</a>
+        <a href="/pages/calendar.php">District Calendar</a>
+        <a href="/pages/about.php">History</a>
       </div>
       <div class="footer-col">
         <h4>Programs</h4>
-        <a href="#">High Schools (EFA)</a>
-        <a href="#">Adult Education</a>
-        <a href="#">Career &amp; Technical</a>
-        <a href="#">Special Education</a>
-        <a href="#">Title I</a>
-        <a href="#">NCCER Credentials</a>
-        <a href="#">OJT Certificates</a>
+        <a href="/pages/Programs.php">High Schools (EFA)</a>
+        <a href="/pages/Programs.php">Adult Education</a>
+        <a href="/pages/Programs.php">Career &amp; Technical</a>
+        <a href="/pages/Programs.php">Special Education</a>
+        <a href="/pages/Programs.php">Title I</a>
+        <a href="/pages/Programs.php">NCCER Credentials</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
@@ -37,7 +39,7 @@
         <a href="#">ARP ESSER Plan</a>
         <a href="#">Transaction Register</a>
         <a href="#">Non-Discrimination Policy</a>
-        <a href="#">Career Opportunities</a>
+        <a href="https://www.governmentjobs.com/careers/sc?department[0]=Department%20of%20Corrections&category[0]=Education%2C%20Training%20%26%20Library&category[1]=Education&sort=PositionTitle%7CAscending" target="_blank">Career Opportunities</a>
         <a href="#">SDE Surplus Property</a>
       </div>
     </div>
@@ -69,7 +71,7 @@
     </div>
   </div>
 
-  <script src=/assets/js/script.js"></script>
+  <script src="/assets/js/script.js"></script>
   <script src="/assets/js/news.js" defer></script>
 
   <div id="news-modal">
