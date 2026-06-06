@@ -20,25 +20,6 @@ window.showTab = function(tab) {
   tabAe.classList.toggle('active', tab === 'ae');
 };
 
-// Close search modal with Escape key
-document.addEventListener('keydown', function(e) {
-  const searchModal = document.getElementById('search-modal');
-  if (e.key === 'Escape' && searchModal) {
-    searchModal.style.display = 'none';
-  }
-});
-
-// Optional: Add logic to open the search modal via button click 
-// (assuming your search button has id="open-search")
-const searchBtn = document.getElementById('open-search');
-const searchModal = document.getElementById('search-modal');
-
-if (searchBtn && searchModal) {
-  searchBtn.addEventListener('click', () => {
-    searchModal.style.display = 'block';
-  });
-}
-
 // Smooth active nav highlighting on scroll (optional enhancement)
 const sections = document.querySelectorAll('section[id]');
 window.addEventListener('scroll', () => {
@@ -85,7 +66,7 @@ window.handleTabClick = function(tab) {
     
     const section = document.getElementById('school-directory');
     if (section) {
-        // Increase this to match your CSS scroll-margin-top
+        // Increase this to match CSS scroll-margin-top
         const headerOffset = 150; 
         const elementPosition = section.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -109,8 +90,6 @@ window.scrollToDirectory = function() {
             top: offsetPosition,
             behavior: 'smooth'
         });
-        
-        // Update URL to remove any old ?tab= parameters if desired
         history.pushState(null, '', 'index.php');
     }
 };
@@ -125,3 +104,70 @@ document.querySelectorAll('.dropdown > a').forEach(item => {
         }
     });
 });
+
+// Open Modal
+function openSearch() {
+    document.getElementById('search-overlay').style.display = 'flex';
+    document.getElementById('search-input').focus();
+}
+
+// Close Modal on Overlay Click
+document.getElementById('search-overlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+        this.style.display = 'none';
+    }
+});
+
+// Search Input Listener
+document.addEventListener('input', function(e) {
+    if (e.target && e.target.id === 'search-input') {
+        const query = e.target.value.toLowerCase();
+        const resultsContainer = document.getElementById('search-results');
+
+        if (query.length < 3) {
+            resultsContainer.innerHTML = '';
+            return;
+        }
+
+        fetch('/assets/data/search-index.json')
+            .then(response => response.json())
+            .then(data => {
+                const matches = data.filter(item => 
+                    item.title.toLowerCase().includes(query) || 
+                    (item.text && item.text.toLowerCase().includes(query))
+                );
+                displayResults(matches);
+            })
+            .catch(err => console.error('Search error:', err));
+    }
+});
+
+// Display Results
+function displayResults(matches) {
+    const container = document.getElementById('search-results');
+    container.innerHTML = ''; 
+
+    if (matches.length === 0) {
+        container.innerHTML = '<div style="padding: 10px;">No results found.</div>';
+        return;
+    }
+
+    matches.forEach(item => {
+        const div = document.createElement('div');
+        div.style.padding = '12px';
+        div.style.borderBottom = '1px solid #eee';
+        div.style.cursor = 'pointer';
+        
+        div.innerHTML = `
+            <div style="font-weight: bold; color: #333;">📄 ${item.title}</div>
+            <div style="font-size: 12px; color: #777;">${item.text.substring(0, 75)}...</div>
+        `;
+        
+        div.onclick = () => {
+            document.getElementById('search-overlay').style.display = 'none';
+            window.location.href = item.link;
+        };
+        
+        container.appendChild(div);
+    });
+}
