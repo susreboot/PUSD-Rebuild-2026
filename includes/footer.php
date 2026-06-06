@@ -89,7 +89,3 @@
 
 </body>
 </html>
-
-<?php if ($user_is_admin): // Replace with your actual admin check ?>
-    <a href="/build_search.php" style="color: grey; font-size: 10px;">Rebuild Search Index</a>
-<?php endif; ?>
