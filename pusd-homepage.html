@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palmetto Unified School District</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a3055;
+      --navy-mid: #0f4a7a;
+      --navy-light: #1a6ba8;
+      --gold: #e8a020;
+      --gold-dark: #c98a18;
+      --text-dark: #1a1a2e;
+      --text-mid: #2d3a47;
+      --text-muted: #5a6a7a;
+      --text-faint: #8a9aaa;
+      --border: #dce3ea;
+      --bg-page: #f4f6f8;
+      --bg-white: #fff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-page);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    /* =====================
+       UTILITY BAR
+    ===================== */
+    .util-bar {
+      background: #050e1a;
+      color: #8a9aaa;
+      font-size: 12px;
+      padding: 7px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.03em;
+    }
+    .util-bar a {
+      color: #8a9aaa;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.15s;
+    }
+    .util-bar a:hover { color: #fff; }
+    .util-bar-right { display: flex; align-items: center; }
+    .util-bar-right .ti { font-size: 11px; vertical-align: -1px; margin-right: 4px; }
+
+    /* =====================
+       NAV
+    ===================== */
+    nav {
+      background: var(--bg-white);
+      border-bottom: 3px solid var(--gold);
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+      margin-right: 36px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-logo-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--navy);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo-icon svg { width: 26px; height: 26px; fill: var(--gold); }
+    .nav-logo-text .abbr {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      display: block;
+      line-height: 1.1;
+    }
+    .nav-logo-text .full {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: stretch;
+      flex: 1;
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .nav-item > a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 15px;
+      height: 66px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -3px;
+      transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-item > a:hover,
+    .nav-item > a.active {
+      color: var(--navy);
+      border-bottom-color: var(--gold);
+    }
+    .nav-chevron {
+      font-size: 10px;
+      opacity: 0.45;
+      margin-top: 1px;
+    }
+
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-white);
+      border: 0.5px solid var(--border);
+      border-top: 2px solid var(--gold);
+      min-width: 230px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      z-index: 200;
+      border-radius: 0 0 8px 8px;
+    }
+    .nav-item:hover .nav-dropdown { display: block; }
+    .nav-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 13px;
+      color: var(--text-mid);
+      text-decoration: none;
+      border-bottom: 0.5px solid #f0f2f4;
+      transition: background 0.1s, color 0.1s, padding-left 0.1s;
+    }
+    .nav-dropdown a:last-child { border-bottom: none; }
+    .nav-dropdown a:hover {
+      background: var(--bg-page);
+      color: var(--navy);
+      padding-left: 26px;
+    }
+
+    .nav-search-btn {
+      margin-left: auto;
+      background: none;
+      border: 0.5px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 16px;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-family: 'Source Sans 3', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-search-btn:hover { background: var(--bg-page); color: var(--navy); }
+
+    /* =====================
+       HERO
+    ===================== */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy-light) 100%);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 390px;
+      min-height: 440px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-content {
+      padding: 64px 44px 64px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 2px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .hero h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 44px;
+      line-height: 1.15;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-tagline {
+      font-size: 17px;
+      line-height: 1.65;
+      color: #a8c4de;
+      max-width: 530px;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 13px 26px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.03em;
+      font-family: 'Source Sans 3', sans-serif;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--gold-dark); color: #fff; }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.38);
+      border-radius: 6px;
+      padding: 13px 26px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Source Sans 3', sans-serif;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    .hero-sidebar {
+      background: rgba(0,0,0,0.25);
+      border-left: 1px solid rgba(255,255,255,0.1);
+      padding: 44px 36px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-sidebar-title {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .quick-link {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 14px 0;
+      border-bottom: 0.5px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+      color: #fff;
+      transition: padding-left 0.15s, color 0.15s;
+    }
+    .quick-link:last-child { border-bottom: none; }
+    .quick-link:hover { padding-left: 7px; color: var(--gold); }
+    .quick-link-icon {
+      width: 38px;
+      height: 38px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+      transition: background 0.15s;
+    }
+    .quick-link:hover .quick-link-icon { background: rgba(232,160,32,0.15); }
+    .quick-link-text { font-size: 13px; font-weight: 600; line-height: 1.3; }
+    .quick-link-sub { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+    /* =====================
+       STATS STRIP
+    ===================== */
+    .stats-strip {
+      background: var(--gold);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 24px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.28);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .stat-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.82);
+      font-weight: 600;
+    }
+
+    /* =====================
+       MAIN LAYOUT
+    ===================== */
+    .main-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 52px 40px;
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 44px;
+      align-items: start;
+    }
+
+    /* =====================
+       SECTION HEADERS
+    ===================== */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .section-header h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .section-header-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .section-header-tag {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--navy);
+      color: var(--gold);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* =====================
+       NEWS
+    ===================== */
+    .news-section { margin-bottom: 44px; }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .news-card {
+      background: var(--bg-white);
+      border-radius: 10px;
+      border: 0.5px solid var(--border);
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow 0.18s, transform 0.18s;
+    }
+    .news-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.11);
+      transform: translateY(-3px);
+    }
+    .news-card-img {
+      height: 120px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 44px;
+    }
+    .news-card-body { padding: 16px 18px; }
+    .news-tag {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .news-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .news-date {
+      font-size: 12px;
+      color: var(--text-faint);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Featured news card — full width, horizontal layout */
+    .news-card.featured { grid-column: 1 / -1; }
+    .news-card.featured { display: grid; grid-template-columns: 300px 1fr; }
+    .news-card.featured .news-card-img {
+      height: auto;
+      font-size: 64px;
+      background: linear-gradient(135deg, var(--navy), #0f6e56);
+    }
+    .news-card.featured .news-card-body { padding: 24px; }
+    .news-card.featured .news-title { font-size: 19px; margin-bottom: 10px; }
+    .news-body-text {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    /* =====================
+       PROGRAMS
+    ===================== */
+    .programs-section { margin-bottom: 44px; }
+
+    .program-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .prog-card {
+      background: var(--bg-white);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 20px;
+      border-top: 3px solid var(--navy);
+      cursor: default;
+      transition: border-top-color 0.18s, box-shadow 0.18s;
+    }
+    .prog-card:hover {
+      border-top-color: var(--gold);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+    }
+    .prog-icon { font-size: 30px; margin-bottom: 12px; }
+    .prog-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 7px; }
+    .prog-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; }
+
+    /* =====================
+       SCHOOL DIRECTORY
+    ===================== */
+    .directory-section {
+      background: var(--bg-white);
+      border-radius: 12px;
+      border: 0.5px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 44px;
+    }
+    .directory-section-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .directory-section-header h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 19px;
+      font-weight: 700;
+    }
+    .dir-tabs { display: flex; gap: 6px; }
+    .dir-tab {
+      padding: 7px 16px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.2);
+      font-family: 'Source Sans 3', sans-serif;
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .dir-tab.active {
+      background: var(--gold);
+      color: #fff;
+      border-color: var(--gold);
+    }
+    .dir-tab:hover:not(.active) {
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+    }
+
+    .school-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .school-item {
+      padding: 15px 18px;
+      border-right: 0.5px solid #f0f2f4;
+      border-bottom: 0.5px solid #f0f2f4;
+      transition: background 0.12s;
+    }
+    .school-item:hover { background: var(--bg-page); }
+    .school-item:nth-child(4n) { border-right: none; }
+    .school-name { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .school-principal { font-size: 11.5px; color: var(--text-muted); margin-bottom: 3px; }
+    .school-location {
+      font-size: 11px;
+      color: var(--text-faint);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .school-location .ti { font-size: 12px; }
+
+    /* =====================
+       MISSION STRIP
+    ===================== */
+    .mission-section {
+      background: var(--navy);
+      color: #fff;
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .mission-section .label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .mission-section h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 30px;
+      font-weight: 700;
+      max-width: 720px;
+      margin: 0 auto 18px;
+      line-height: 1.4;
+      color: #fff;
+    }
+    .mission-section p {
+      font-size: 16px;
+      color: #a8c4de;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* =====================
+       SIDEBAR
+    ===================== */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+    .sidebar-card {
+      background: var(--bg-white);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .sidebar-card-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .sidebar-card-header .ti { color: var(--gold); font-size: 16px; }
+    .sidebar-card-body { padding: 16px 18px; }
+
+    /* Superintendent quote card */
+    .supt-card {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color: #fff;
+      border-radius: 10px;
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+    .supt-card::before {
+      content: '\201C';
+      position: absolute;
+      top: -14px;
+      right: 14px;
+      font-size: 140px;
+      color: rgba(232,160,32,0.13);
+      font-family: 'Libre Baskerville', serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .supt-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      border: 2px solid rgba(255,255,255,0.2);
+      flex-shrink: 0;
+    }
+    .supt-quote {
+      font-size: 13px;
+      line-height: 1.75;
+      color: #a8c4de;
+      margin-bottom: 16px;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+    .supt-name { font-size: 13.5px; font-weight: 700; color: #fff; }
+    .supt-title { font-size: 11px; color: var(--gold); margin-top: 3px; }
+
+    /* Info rows */
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      padding: 11px 0;
+      border-bottom: 0.5px solid #f0f2f4;
+      font-size: 13px;
+      color: var(--text-mid);
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-row > .ti { color: var(--navy); font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+    .info-label { font-size: 10px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+
+    /* Event items */
+    .event-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 0.5px solid #f0f2f4;
+      align-items: flex-start;
+    }
+    .event-item:last-child { border-bottom: none; }
+    .event-date-badge {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 8px;
+      text-align: center;
+      padding: 7px 11px;
+      flex-shrink: 0;
+      min-width: 50px;
+    }
+    .event-date-badge .day { font-size: 20px; font-weight: 700; line-height: 1; }
+    .event-date-badge .month { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-top: 2px; }
+    .event-title { font-size: 13px; font-weight: 600; color: var(--text-dark); line-height: 1.35; }
+    .event-meta { font-size: 11px; color: var(--text-faint); margin-top: 4px; }
+
+    .view-all-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.12s;
+    }
+    .view-all-link:hover { color: var(--gold); }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    footer {
+      background: #050e1a;
+      color: #8a9aaa;
+      padding: 52px 40px 24px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 280px 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 36px;
+    }
+    .footer-brand .brand-abbr {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .footer-brand .brand-sub {
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .footer-brand p {
+      font-size: 12.5px;
+      line-height: 1.75;
+      margin-top: 14px;
+    }
+    .footer-divider {
+      border: none;
+      border-top: 0.5px solid rgba(255,255,255,0.08);
+      max-width: 1200px;
+      margin: 0 auto 20px;
+    }
+    .footer-col h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      color: #8a9aaa;
+      text-decoration: none;
+      font-size: 13px;
+      margin-bottom: 10px;
+      transition: color 0.12s;
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom-links a {
+      color: #8a9aaa;
+      text-decoration: none;
+      margin-left: 22px;
+      transition: color 0.12s;
+    }
+    .footer-bottom-links a:hover { color: #fff; }
+
+    /* =====================
+       RESPONSIVE
+    ===================== */
+    @media (max-width: 1024px) {
+      .main-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: grid; grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .util-bar { padding: 7px 20px; font-size: 11px; }
+      .util-bar-left { display: none; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-sidebar { display: none; }
+      .hero h1 { font-size: 30px; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .main-wrap { padding: 32px 20px; }
+      .news-card.featured { grid-template-columns: 1fr; }
+      .news-card.featured .news-card-img { height: 140px; }
+      .program-cards { grid-template-columns: repeat(2, 1fr); }
+      .school-grid { grid-template-columns: repeat(2, 1fr); }
+      .sidebar { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .footer-bottom-links a:first-child { margin-left: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content { padding: 40px 24px; }
+      .hero h1 { font-size: 26px; }
+      .program-cards { grid-template-columns: 1fr; }
+      .school-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== UTILITY BAR ==================== -->
+  <div class="util-bar">
+    <span class="util-bar-left">South Carolina Department of Corrections — Palmetto Unified School District</span>
+    <div class="util-bar-right">
+      <span><i class="ti ti-phone"></i> (803) 896-1583</span>
+      <a href="https://www.doc.sc.gov/" target="_blank">SCDC Website</a>
+      <a href="#">Staff Portal</a>
+      <a href="#">Careers</a>
+    </div>
+  </div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 2L4 10v3h2v13h6v-8h8v8h6V13h2v-3L16 2z"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        <span class="abbr">PUSD</span>
+        <span class="full">Palmetto Unified School District</span>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="#" class="active">District Overview <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="#">About PUSD</a>
+          <a href="#">District Calendar</a>
+          <a href="#">Strategic Plan</a>
+          <a href="#">Beliefs &amp; Principles</a>
+          <a href="#">Organizational Chart</a>
+          <a href="#">Public Documents</a>
+          <a href="#">Non-Discrimination Policy</a>
+          <a href="#">Teacher Pay Scale</a>
+          <a href="#">District Report Card</a>
+          <a href="https://www.doc.sc.gov/policy/policy.html" target="_blank">SCDOC/PUSD Policies</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">Schools <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="#">High Schools (EFA)</a>
+          <a href="#">Adult Education Schools</a>
+          <a href="#">School Directory</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">Programs <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="#">Career &amp; Technical Education</a>
+          <a href="#">Adult Basic Education</a>
+          <a href="#">Special Education Services</a>
+          <a href="#">Title I Programs</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">Board of Trustees <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="#">Board Members</a>
+          <a href="#">Meetings &amp; Minutes</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">News</a>
+      </div>
+      <div class="nav-item">
+        <a href="#">Careers</a>
+      </div>
+    </div>
+
+    <button class="nav-search-btn" onclick="document.getElementById('search-modal').style.display='flex'">
+      <i class="ti ti-search"></i> Search
+    </button>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">State of South Carolina</div>
+      <h1>Education That <span>Transforms</span> Lives</h1>
+      <p class="hero-tagline">
+        Palmetto Unified School District provides high-quality academic, vocational, and life skills
+        education to the incarcerated population of the SC Department of Corrections.
+      </p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary"><i class="ti ti-briefcase"></i> Career Opportunities</a>
+        <a href="#school-directory" class="btn-outline"><i class="ti ti-school"></i> School Directory</a>
+      </div>
+    </div>
+
+    <div class="hero-sidebar">
+      <div class="hero-sidebar-title">Quick Access</div>
+      <a href="#" class="quick-link">
+        <div class="quick-link-icon"><i class="ti ti-certificate"></i></div>
+        <div>
+          <div class="quick-link-text">Credential Verification</div>
+          <div class="quick-link-sub">Diplomas &amp; GED transcripts</div>
+        </div>
+      </a>
+      <a href="#" class="quick-link">
+        <div class="quick-link-icon"><i class="ti ti-file-text"></i></div>
+        <div>
+          <div class="quick-link-text">Public Documents</div>
+          <div class="quick-link-sub">Budget, ESSER, policies</div>
+        </div>
+      </a>
+      <a href="#" class="quick-link">
+        <div class="quick-link-icon"><i class="ti ti-calendar-event"></i></div>
+        <div>
+          <div class="quick-link-text">Board Meetings</div>
+          <div class="quick-link-sub">Dates, minutes &amp; agendas</div>
+        </div>
+      </a>
+      <a href="#" class="quick-link">
+        <div class="quick-link-icon"><i class="ti ti-chart-bar"></i></div>
+        <div>
+          <div class="quick-link-text">District Report Card</div>
+          <div class="quick-link-sub">SC state scorecard</div>
+        </div>
+      </a>
+      <a href="#" class="quick-link">
+        <div class="quick-link-icon"><i class="ti ti-award"></i></div>
+        <div>
+          <div class="quick-link-text">Strategic Plan</div>
+          <div class="quick-link-sub">Goals &amp; initiatives</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== STATS STRIP ==================== -->
+  <div class="stats-strip" aria-label="District at a glance">
+    <div class="stat-item">
+      <div class="stat-num">21</div>
+      <div class="stat-label">Schools Statewide</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">30+</div>
+      <div class="stat-label">CTE Programs</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">80+</div>
+      <div class="stat-label">OJT Certificates</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12</div>
+      <div class="stat-label">Industry Credentials</div>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <div class="main-wrap">
+
+    <!-- LEFT COLUMN -->
+    <main>
+
+      <!-- NEWS -->
+      <section class="news-section">
+        <div class="section-header">
+          <h2>News &amp; Announcements</h2>
+          <div class="section-header-line"></div>
+          <span class="section-header-tag">Latest</span>
+        </div>
+        <div class="news-grid">
+
+          <a href="#" class="news-card featured">
+            <div class="news-card-img">🏆</div>
+            <div class="news-card-body">
+              <div class="news-tag">Teacher of the Year</div>
+              <div class="news-title">Yvette Lakin Named 2025–2026 Teacher of the Year</div>
+              <p class="news-body-text">
+                Yvette is dedicated to empowering students with knowledge, confidence, and the belief that
+                their circumstances do not define their potential. She exemplifies the mission of PUSD in
+                every classroom, every day.
+              </p>
+              <div class="news-date"><i class="ti ti-calendar"></i> June 2025</div>
+            </div>
+          </a>
+
+          <a href="#" class="news-card">
+            <div class="news-card-img">💼</div>
+            <div class="news-card-body">
+              <div class="news-tag">Careers</div>
+              <div class="news-title">Now Hiring: Secondary Math, Science &amp; English Teachers</div>
+              <div class="news-date"><i class="ti ti-calendar"></i> May 2025</div>
+            </div>
+          </a>
+
+          <a href="#" class="news-card">
+            <div class="news-card-img">📋</div>
+            <div class="news-card-body">
+              <div class="news-tag">Board</div>
+              <div class="news-title">Next Board Meeting: January 23rd, 2026 at 10:00 AM</div>
+              <div class="news-date"><i class="ti ti-calendar"></i> Upcoming</div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- PROGRAMS -->
+      <section class="programs-section">
+        <div class="section-header">
+          <h2>Academic Programs</h2>
+          <div class="section-header-line"></div>
+        </div>
+        <div class="program-cards">
+          <div class="prog-card">
+            <div class="prog-icon">🎓</div>
+            <div class="prog-title">Education Finance Act (EFA)</div>
+            <p class="prog-desc">12 high schools serving students ages 17–21 toward a high school diploma or GED credential.</p>
+          </div>
+          <div class="prog-card">
+            <div class="prog-icon">🔧</div>
+            <div class="prog-title">Career &amp; Technical Education</div>
+            <p class="prog-desc">30+ CTE programs including Carpentry, Welding, HVAC, IT, Plumbing, Electrical, and more.</p>
+          </div>
+          <div class="prog-card">
+            <div class="prog-icon">📚</div>
+            <div class="prog-title">Adult Basic Education</div>
+            <p class="prog-desc">21 adult programs providing academics, vocational training, and life skills for ages 22 and older.</p>
+          </div>
+          <div class="prog-card">
+            <div class="prog-icon">🤝</div>
+            <div class="prog-title">Special Education Services</div>
+            <p class="prog-desc">IEP-based instruction for students up to age 22 in the least restrictive environment.</p>
+          </div>
+          <div class="prog-card">
+            <div class="prog-icon">🏅</div>
+            <div class="prog-title">Industry Credentials</div>
+            <p class="prog-desc">NCCER, EPA, and ASE certifications providing nationally recognized workforce credentials.</p>
+          </div>
+          <div class="prog-card">
+            <div class="prog-icon">📋</div>
+            <div class="prog-title">Title I Programs</div>
+            <p class="prog-desc">Part D supplemental services focused on Reading/ELA, Math, and successful community transition.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCHOOL DIRECTORY -->
+      <section id="school-directory">
+        <div class="section-header">
+          <h2>School Directory</h2>
+          <div class="section-header-line"></div>
+        </div>
+        <div class="directory-section">
+          <div class="directory-section-header">
+            <h3>Our Schools</h3>
+            <div class="dir-tabs">
+              <button class="dir-tab active" id="tab-hs" onclick="showTab('hs')">High Schools</button>
+              <button class="dir-tab" id="tab-ae" onclick="showTab('ae')">Adult Ed</button>
+            </div>
+          </div>
+
+          <!-- HIGH SCHOOLS -->
+          <div id="dir-hs" class="school-grid">
+            <div class="school-item">
+              <div class="school-name">Allendale</div>
+              <div class="school-principal">Dr. Alston</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Fairfax, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Broad River</div>
+              <div class="school-principal">Principal: Vacant</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Columbia, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Camille Graham</div>
+              <div class="school-principal">Principal: Vacant</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Columbia, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Kirkland</div>
+              <div class="school-principal">Principal: Vacant</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Columbia, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Lee</div>
+              <div class="school-principal">Dr. Lucear</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Bishopville, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">MacDougall</div>
+              <div class="school-principal">Mr. Bowen</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Ridgeville, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Manning</div>
+              <div class="school-principal">Principal: Vacant</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Columbia, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Ridgeland</div>
+              <div class="school-principal">Mr. Johnson</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Ridgeland, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Trenton</div>
+              <div class="school-principal">Dr. Alston</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Trenton, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Turbeville</div>
+              <div class="school-principal">Dr. Lucear</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Turbeville, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Tyger River</div>
+              <div class="school-principal">Principal: Vacant</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Enoree, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Wateree</div>
+              <div class="school-principal">Ms. Desai</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Rembert, SC</div>
+            </div>
+          </div>
+
+          <!-- ADULT EDUCATION SCHOOLS -->
+          <div id="dir-ae" class="school-grid" style="display:none">
+            <div class="school-item">
+              <div class="school-name">Evans</div>
+              <div class="school-principal">Dr. Lucear</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Bennettsville, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Goodman</div>
+              <div class="school-principal">Principal: Vacant</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Columbia, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Kershaw</div>
+              <div class="school-principal">Dr. Lucear</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Kershaw, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Leath</div>
+              <div class="school-principal">Mr. Nicholson</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Greenwood, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Leiber</div>
+              <div class="school-principal">Mr. Bowen</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Ridgeville, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Livesay</div>
+              <div class="school-principal">Ms. Pisa</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Spartanburg, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">McCormick</div>
+              <div class="school-principal">Ms. Callan</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>McCormick, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Palmer</div>
+              <div class="school-principal">Dr. Lucear</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Florence, SC</div>
+            </div>
+            <div class="school-item">
+              <div class="school-name">Perry</div>
+              <div class="school-principal">School Leader: Vacant</div>
+              <div class="school-location"><i class="ti ti-map-pin"></i>Pelzer, SC</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- SUPERINTENDENT QUOTE -->
+      <div class="supt-card">
+        <div class="supt-avatar">BH</div>
+        <p class="supt-quote">
+          "Education has the power to transform lives, and we are dedicated to ensuring that each student
+          has the opportunity to build a future defined by potential and purpose."
+        </p>
+        <div class="supt-name">Dr. Beverly Holiday</div>
+        <div class="supt-title">Superintendent of Schools</div>
+      </div>
+
+      <!-- UPCOMING EVENTS -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">
+          <i class="ti ti-calendar-event"></i> Upcoming Events
+        </div>
+        <div class="sidebar-card-body">
+          <div class="event-item">
+            <div class="event-date-badge">
+              <div class="day">23</div>
+              <div class="month">Jan</div>
+            </div>
+            <div>
+              <div class="event-title">PUSD Board Meeting</div>
+              <div class="event-meta">10:00 AM &middot; PUSD District Office</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-date-badge">
+              <div class="day">3</div>
+              <div class="month">Apr</div>
+            </div>
+            <div>
+              <div class="event-title">PUSD Board Meeting</div>
+              <div class="event-meta">10:00 AM &middot; PUSD District Office</div>
+            </div>
+          </div>
+          <a href="#" class="view-all-link">View Full Calendar <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- CONTACT & HOURS -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">
+          <i class="ti ti-map-pin"></i> Contact &amp; Hours
+        </div>
+        <div class="sidebar-card-body">
+          <div class="info-row">
+            <i class="ti ti-building"></i>
+            <div>
+              <div class="info-label">Address</div>
+              1735 Haviland Circle, Columbia SC 29210
+            </div>
+          </div>
+          <div class="info-row">
+            <i class="ti ti-phone"></i>
+            <div>
+              <div class="info-label">Phone</div>
+              (803) 896-1583
+            </div>
+          </div>
+          <div class="info-row">
+            <i class="ti ti-clock"></i>
+            <div>
+              <div class="info-label">Office Hours</div>
+              Mon–Fri, 8:00 AM – 4:00 PM<br>
+              Closed on State Holidays
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CREDENTIAL VERIFICATION -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">
+          <i class="ti ti-certificate"></i> Credential Verification
+        </div>
+        <div class="sidebar-card-body">
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.65;margin-bottom:12px">
+            All diploma and transcript requests go through the SC Department of Education — not PUSD directly.
+          </p>
+          <div class="info-row" style="padding-top:0">
+            <i class="ti ti-phone"></i>
+            <div>
+              <div class="info-label">GED Transcripts</div>
+              (803) 734-8347
+            </div>
+          </div>
+          <div class="info-row">
+            <i class="ti ti-phone"></i>
+            <div>
+              <div class="info-label">High School Diploma</div>
+              (803) 734-8347
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </div><!-- /main-wrap -->
+
+  <!-- ==================== MISSION STRIP ==================== -->
+  <section class="mission-section">
+    <div class="label">Our Purpose</div>
+    <h2>Educating and empowering participants to become employable, self-sufficient citizens.</h2>
+    <p>
+      Palmetto Unified School District and the SC Department of Corrections provide relevant academic courses,
+      highly effective career-related vocational programs, and necessary life skills to make a positive impact in society.
+    </p>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-abbr">PUSD</span>
+        <span class="brand-sub">Palmetto Unified School District</span>
+        <p>A division of the South Carolina Department of Corrections, serving the educational needs of incarcerated individuals statewide.</p>
+        <p style="margin-top:12px">
+          1735 Haviland Circle<br>
+          Columbia, SC 29210<br>
+          (803) 896-1583
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>District</h4>
+        <a href="#">District Overview</a>
+        <a href="#">Strategic Plan</a>
+        <a href="#">Board of Trustees</a>
+        <a href="#">Organizational Chart</a>
+        <a href="#">District Report Card</a>
+        <a href="#">District Calendar</a>
+        <a href="#">History</a>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <a href="#">High Schools (EFA)</a>
+        <a href="#">Adult Education</a>
+        <a href="#">Career &amp; Technical</a>
+        <a href="#">Special Education</a>
+        <a href="#">Title I</a>
+        <a href="#">NCCER Credentials</a>
+        <a href="#">OJT Certificates</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Public Documents</a>
+        <a href="https://www.doc.sc.gov/policy/policy.html" target="_blank">SCDOC/PUSD Policies</a>
+        <a href="#">ARP ESSER Plan</a>
+        <a href="#">Transaction Register</a>
+        <a href="#">Non-Discrimination Policy</a>
+        <a href="#">Career Opportunities</a>
+        <a href="#">SDE Surplus Property</a>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <span>&copy; 2025 Palmetto Unified School District &middot; South Carolina Department of Corrections</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Non-Discrimination</a>
+        <a href="https://www.doc.sc.gov/" target="_blank">SCDC Website</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SIMPLE SEARCH MODAL ==================== -->
+  <div id="search-modal" style="display:none;position:fixed;inset:0;background:rgba(5,14,26,0.7);z-index:999;align-items:flex-start;justify-content:center;padding-top:80px" onclick="if(event.target===this)this.style.display='none'">
+    <div style="background:#fff;border-radius:12px;width:100%;max-width:560px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.3)">
+      <div style="display:flex;align-items:center;padding:16px 20px;border-bottom:0.5px solid var(--border);gap:12px">
+        <i class="ti ti-search" style="font-size:20px;color:var(--text-faint)"></i>
+        <input type="text" placeholder="Search PUSD — schools, programs, documents..." autofocus
+          style="flex:1;border:none;outline:none;font-size:16px;font-family:'Source Sans 3',sans-serif;color:var(--text-dark)">
+        <button onclick="document.getElementById('search-modal').style.display='none'"
+          style="background:none;border:none;cursor:pointer;color:var(--text-faint);font-size:20px;line-height:1;padding:0">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+      <div style="padding:16px 20px;font-size:13px;color:var(--text-faint)">
+        Start typing to search the site&hellip;
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // School directory tab switching
+    function showTab(tab) {
+      document.getElementById('dir-hs').style.display = tab === 'hs' ? 'grid' : 'none';
+      document.getElementById('dir-ae').style.display = tab === 'ae' ? 'grid' : 'none';
+      document.getElementById('tab-hs').classList.toggle('active', tab === 'hs');
+      document.getElementById('tab-ae').classList.toggle('active', tab === 'ae');
+    }
+
+    // Close search modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('search-modal').style.display = 'none';
+      }
+    });
+
+    // Smooth active nav highlighting on scroll (optional enhancement)
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 100) current = section.id;
+      });
+    });
+  </script>
+
+</body>
+</html>

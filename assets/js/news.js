@@ -1,0 +1,88 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('news-container');
+    const modal = document.getElementById('news-modal');
+    const closeBtn = document.querySelector('.modal-close');
+
+    // Load News Data
+    fetch('/assets/data/news.json')
+        .then(response => response.json())
+        .then(data => {
+
+            // Determine if we are on the homepage
+            const isHomePage = window.location.pathname.includes('index.php') || window.location.pathname === '/';
+            
+            // Limit to 6 items if on homepage, otherwise show all
+            const displayData = isHomePage ? data.slice(0, 6) : data;
+
+            displayData.forEach(item => {
+                const card = document.createElement('a');
+                card.className = item.featured ? "news-card featured" : "news-card";
+                card.href = "#"; // Prevent navigation
+                card.dataset.id = item.id; // Store ID in dataset
+
+                let mediaContent = item.icon ? `<span class="material-symbols-outlined" style="font-size: 48px;">${item.icon}</span>` : '';
+
+                card.innerHTML = `
+                    <div class="news-card-img">${mediaContent}</div>
+                    <div class="news-card-body">
+                        <div class="news-tag">${item.tag}</div>
+                        <div class="news-title">${item.title}</div>
+                        <div class="news-date"><i class="ti ti-calendar"></i> ${item.date}</div>
+                    </div>
+                `;
+
+                // Add Event Listener instead of onclick
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal(item.id);
+                });
+
+                container.appendChild(card);
+            });
+        })
+        .catch(err => console.error('Error loading news:', err));
+
+    // Modal Close Listeners
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+    
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    }
+});
+
+async function openModal(id) {
+    try {
+        const response = await fetch('/assets/data/news.json');
+        const data = await response.json();
+        const newsItem = data.find(item => item.id === id);
+        
+        if (newsItem) {
+            document.getElementById('modal-title').innerText = newsItem.title;
+            document.getElementById('modal-full-text').innerHTML = newsItem.full_text;
+            
+            const imgContainer = document.getElementById('modal-image-container');
+            if (imgContainer) {
+                imgContainer.innerHTML = '';
+                let imagesToDisplay = Array.isArray(newsItem.images) ? newsItem.images : (newsItem.image ? [newsItem.image] : []);
+                
+                imagesToDisplay.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src; 
+                    img.className = 'modal-img';
+                    imgContainer.appendChild(img);
+                });
+            }
+            document.getElementById('news-modal').style.display = 'block';
+        }
+    } catch (err) {
+        console.error("Modal failed to open:", err);
+    }
+}
+
+function closeModal() {
+    document.getElementById('news-modal').style.display = 'none';
+}

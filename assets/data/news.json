@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "featured": true,
+    "icon": "emoji_events",
+    "tag": "Teacher of the Year",
+    "title": "Yvette Lakin Named 2025–2026 Teacher of the Year",
+    "date": "June 2025",
+    "summary": "Yvette is dedicated to empowering students with knowledge, confidence, and the belief that their circumstances do not define their potential.",
+    "images": ["/images/lakin.png"],
+    "full_text": "<p>Palmetto Unified School District proudly recognizes Yvette Lakin as our 2025–2026 Teacher of the Year!</p><p>For Yvette, this honor is more than a title, it is a reflection of her unwavering commitment to the students she serves and their unique journeys to success. Her path to education began in an unexpected place, as a correctional officer. There, she discovered a passion for teaching and a calling to empower individuals through learning. This realization became her lifelong mission, to ensure that every student knows their potential is not defined by their circumstances.</p><p>Throughout her career with the South Carolina Department of Corrections and Palmetto Unified School District, Yvette has specialized in GED instruction for Reading Language Arts and Math. She has transformed countless lives, guiding students from uncertainty to confidence, and equipping them with the skills for lifelong achievement.</p><p>Her teaching philosophy is built on resourcefulness, humility, and empathy. Yvette meets students where they are, personalizing lessons with real-world applications, hands-on learning, and steadfast encouragement. She leads by example, modeling resilience, setting high expectations, and fostering hope in every classroom interaction.</p><p>As she puts it, “Education is not just what I do, it is who I am.”</p><p><b>Congratulations, Yvette, and thank you for inspiring us all.</b></p>"
+  },
+  {
+    "id": 2,
+    "featured": false,
+    "icon": "work",
+    "tag": "Careers",
+    "title": "Now Hiring: Secondary Math, Science & English Teachers",
+    "date": "May 2025"
+  },
+  {
+    "id": 3,
+    "featured": false,
+   "icon": "handshake",
+    "tag": "Board Meeting",
+    "title": "District Board Meeting Scheduled for July 12",
+    "date": "May 2025"
+  },
+  {
+  "id": 10,
+  "tag": "Palmetto Unified School District",
+  "title": "State Superintendent Weaver Visits PUSD",
+  "date": "February 9, 2026",
+  "featured": false,
+  "icon": "school",
+  "full_text": "<h2>A Meaningful Visit to PUSD</h2><p>PUSD was proud to welcome State Superintendent Weaver to the District Office for a meaningful and encouraging visit. As a district operating within a correctional environment, we value every opportunity to highlight the unique work our educators and staff do each day to support students, foster growth, and create pathways to success.</p><p>Superintendent Weaver's visit provided a valuable moment to share those efforts directly. During her time with us, she engaged in thoughtful conversation about the programs, instructional approaches, and support systems that help our students thrive in a highly structured setting. She showed genuine interest in the challenges and opportunities that come with providing education in a correctional environment and expressed strong support for our mission and the dedication of our team.</p><p>We appreciated the chance to showcase the commitment, innovation, and resilience that define PUSD. Hosting Superintendent Weaver was an honor, and we look forward to continued collaboration as we work to expand opportunities and strengthen outcomes for every student we serve.</p>",
+  "images": []
+}
+]
