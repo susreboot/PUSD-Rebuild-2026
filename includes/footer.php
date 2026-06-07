@@ -55,23 +55,6 @@
     </div>
   </footer>
 
-  <div id="search-modal" style="display:none;position:fixed;inset:0;background:rgba(5,14,26,0.7);z-index:999;align-items:flex-start;justify-content:center;padding-top:80px" onclick="if(event.target===this)this.style.display='none'">
-    <div style="background:#fff;border-radius:12px;width:100%;max-width:560px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.3)">
-      <div style="display:flex;align-items:center;padding:16px 20px;border-bottom:0.5px solid var(--border);gap:12px">
-        <i class="ti ti-search" style="font-size:20px;color:var(--text-faint)"></i>
-        <input type="text" placeholder="Search PUSD — schools, programs, documents..." autofocus
-          style="flex:1;border:none;outline:none;font-size:16px;font-family:'Source Sans 3',sans-serif;color:var(--text-dark)">
-        <button onclick="document.getElementById('search-modal').style.display='none'"
-          style="background:none;border:none;cursor:pointer;color:var(--text-faint);font-size:20px;line-height:1;padding:0">
-          <i class="ti ti-x"></i>
-        </button>
-      </div>
-      <div style="padding:16px 20px;font-size:13px;color:var(--text-faint)">
-        Start typing to search the site&hellip;
-      </div>
-    </div>
-  </div>
-
   <script src="/assets/js/script.js"></script>
   <script src="/assets/js/news.js" defer></script>
 
