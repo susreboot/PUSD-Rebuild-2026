@@ -142,13 +142,12 @@ document.addEventListener('input', function(e) {
     }
 });
 
-// Display Results
 function displayResults(matches) {
     const container = document.getElementById('search-results');
     container.innerHTML = ''; 
 
     if (matches.length === 0) {
-        container.innerHTML = '<div style="padding: 10px;">No results found.</div>';
+        container.innerHTML = '<div style="padding: 10px; color: #888;">No results found.</div>';
         return;
     }
 
@@ -160,13 +159,18 @@ function displayResults(matches) {
         
         div.innerHTML = `
             <div style="font-weight: bold; color: #333;">📄 ${item.title}</div>
-            <div style="font-size: 12px; color: #777;">${item.text.substring(0, 75)}...</div>
+            <div style="font-size: 12px; color: #777; margin-top: 4px;">${item.text.substring(0, 75)}...</div>
         `;
         
         div.onclick = () => {
+            // Close the overlay
             document.getElementById('search-overlay').style.display = 'none';
-            window.location.href = item.link;
+            // Navigate using encodeURI to fix spaces in filenames
+            window.location.href = encodeURI(item.link);
         };
+        
+        div.onmouseover = () => div.style.backgroundColor = '#f9f9f9';
+        div.onmouseout = () => div.style.backgroundColor = 'white';
         
         container.appendChild(div);
     });
