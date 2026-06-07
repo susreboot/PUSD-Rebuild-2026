@@ -55,7 +55,7 @@
     </div>
   </footer>
 
-  <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/script.js" defer></script>
   <script src="/assets/js/news.js" defer></script>
 
   <div id="news-modal">
