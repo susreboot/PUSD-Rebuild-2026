@@ -57,6 +57,7 @@
 
   <script src="/assets/js/script.js" defer></script>
   <script src="/assets/js/news.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
 
   <div id="news-modal">
     <div class="modal-box">
