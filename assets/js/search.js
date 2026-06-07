@@ -11,29 +11,20 @@ document.addEventListener('input', function(e) {
         }
 
         fetch('/assets/data/search-index.json')
-            .then(response => response.json())
-            .then(data => {
-                const matches = data.filter(item => 
-                    (item.title && item.title.toLowerCase().includes(query)) || 
-                    (item.text && item.text.toLowerCase().includes(query))
-                );
-                
-                // Render the results
-                container.innerHTML = '';
-                if (matches.length === 0) {
-                    container.innerHTML = '<div style="padding: 10px; color: #888;">No results found.</div>';
-                } else {
-                    matches.forEach(item => {
-                        const div = document.createElement('div');
-                        div.style.padding = '12px';
-                        div.style.borderBottom = '1px solid #eee';
-                        div.style.cursor = 'pointer';
-                        div.innerHTML = `<strong>${item.title}</strong><div style="font-size: 12px; color: #777;">${item.text.substring(0, 50)}...</div>`;
-                        div.onclick = () => window.location.href = item.link;
-                        container.appendChild(div);
-                    });
-                }
-            })
-            .catch(err => console.error("Search error:", err));
+    .then(response => {
+        // Check if the response is empty
+        return response.text().then(text => {
+            if (!text || text.trim() === "") {
+                throw new Error("Server returned an empty file!");
+            }
+            return JSON.parse(text);
+        });
+    })
+    .then(data => {
+        // ... your existing filter and display logic ...
+    })
+    .catch(err => {
+        console.error("Search error:", err);
+    });
     }
 });
