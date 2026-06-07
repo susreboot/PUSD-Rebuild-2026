@@ -129,7 +129,7 @@ document.addEventListener('input', function(e) {
             return;
         }
 
-        fetch('/assets/data/search-index.json')
+        fetch('./assets/data/search-index.json')
             .then(response => response.json())
             .then(data => {
                 const matches = data.filter(item => 
