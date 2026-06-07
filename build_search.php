@@ -36,8 +36,10 @@ foreach ($files as $file) {
         }
         
         // Clean up the text for searching
-        $text = strip_tags($content);
+        $text = preg_replace('/<\?php.*?\?>/s', '', $content);
+        $text = strip_tags($text);
         $text = preg_replace('/\s+/', ' ', $text);
+        $text = trim(substr($text, 0, 500));
         
         if (!empty($text)) {
             // We strip the local directory path and add a / at the start

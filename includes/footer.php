@@ -55,10 +55,6 @@
     </div>
   </footer>
 
-  <script src="/assets/js/script.js" defer></script>
-  <script src="/assets/js/news.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
-
   <div id="news-modal">
     <div class="modal-box">
       
@@ -71,5 +67,23 @@
     </div>
   </div>
 
+  <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/news.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
 </body>
 </html>
+
+<?php
+// Auto-rebuild search index if it's older than 1 hour
+$indexFile = __DIR__ . '/assets/data/search-index.json';
+$maxAge = 3600; // seconds (1 hour)
+
+if (!file_exists($indexFile) || (time() - filemtime($indexFile)) > $maxAge) {
+    // Run in background so it doesn't slow down the page
+    if (PHP_OS_FAMILY === 'Windows') {
+        pclose(popen('start /B php ' . __DIR__ . '/build_search.php', 'r'));
+    } else {
+        exec('php ' . __DIR__ . '/build_search.php > /dev/null 2>&1 &');
+    }
+}
+?>
