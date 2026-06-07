@@ -119,8 +119,11 @@ document.getElementById('search-overlay').addEventListener('click', function(e) 
 });
 
 // Search Input Listener
-document.addEventListener('input', function(e) {
-    if (e.target && e.target.id === 'search-input') {
+// Add a listener to the input field directly by ID
+const searchInput = document.getElementById('search-input');
+
+if (searchInput) {
+    searchInput.addEventListener('input', function(e) {
         const query = e.target.value.toLowerCase();
         const resultsContainer = document.getElementById('search-results');
 
@@ -129,8 +132,12 @@ document.addEventListener('input', function(e) {
             return;
         }
 
-        fetch('./assets/data/search-index.json')
-            .then(response => response.json())
+        // Using the full path to be safe in production
+        fetch('/assets/data/search-index.json?nocache=' + new Date().getTime())
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
             .then(data => {
                 const matches = data.filter(item => 
                     item.title.toLowerCase().includes(query) || 
@@ -138,9 +145,14 @@ document.addEventListener('input', function(e) {
                 );
                 displayResults(matches);
             })
-            .catch(err => console.error('Search error:', err));
-    }
-});
+            .catch(err => {
+                console.error('Search fetch error:', err);
+                resultsContainer.innerHTML = '<div style="padding:10px; color:red;">Error loading results.</div>';
+            });
+    });
+} else {
+    console.error("Search input element not found!");
+}
 
 function displayResults(matches) {
     const container = document.getElementById('search-results');
