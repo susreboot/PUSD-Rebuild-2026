@@ -133,7 +133,7 @@ if (searchInput) {
         }
 
         // Using the full path to be safe in production
-        fetch('/assets/data/search-index.json?nocache=' + new Date().getTime())
+        fetch('./assets/data/search-index.json?nocache=' + new Date().getTime())
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
