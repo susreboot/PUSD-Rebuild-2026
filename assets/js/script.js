@@ -121,37 +121,21 @@ document.getElementById('search-overlay').addEventListener('click', function(e) 
 // Search Input Listener
 // Add a listener to the input field directly by ID
 const searchInput = document.getElementById('search-input');
-
 if (searchInput) {
     searchInput.addEventListener('input', function(e) {
+        console.log("Input detected! Value:", e.target.value); // CHECK THE CONSOLE FOR THIS
         const query = e.target.value.toLowerCase();
-        const resultsContainer = document.getElementById('search-results');
+        
+        if (query.length < 3) return;
 
-        if (query.length < 3) {
-            resultsContainer.innerHTML = '';
-            return;
-        }
-
-        // Using the full path to be safe in production
-        fetch('./assets/data/search-index.json?nocache=' + new Date().getTime())
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.json();
-            })
-            .then(data => {
-                const matches = data.filter(item => 
-                    item.title.toLowerCase().includes(query) || 
-                    (item.text && item.text.toLowerCase().includes(query))
-                );
-                displayResults(matches);
-            })
-            .catch(err => {
-                console.error('Search fetch error:', err);
-                resultsContainer.innerHTML = '<div style="padding:10px; color:red;">Error loading results.</div>';
-            });
+        console.log("Fetching index..."); // CHECK THE CONSOLE FOR THIS
+        fetch('/assets/data/search-index.json')
+            .then(response => response.json())
+            .then(data => console.log("Data loaded!"))
+            .catch(err => console.error("Error:", err));
     });
 } else {
-    console.error("Search input element not found!");
+    console.error("Search input NOT FOUND in the DOM");
 }
 
 function displayResults(matches) {
