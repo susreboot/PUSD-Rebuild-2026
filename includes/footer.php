@@ -71,19 +71,28 @@
   <script src="/assets/js/news.js" defer></script>
   <script src="/assets/js/search.js" defer></script>
 </body>
+
 </html>
 
 <?php
-// Auto-rebuild search index if it's older than 1 hour
-$indexFile = __DIR__ . '/assets/data/search-index.json';
-$maxAge = 3600; // seconds (1 hour)
+$indexFile   = $_SERVER['DOCUMENT_ROOT'] . '/assets/data/search-index.json';
+$builderFile = $_SERVER['DOCUMENT_ROOT'] . '/build_search.php';
+$lockFile    = $_SERVER['DOCUMENT_ROOT'] . '/assets/data/search-index.lock';
+$maxAge      = 3600;
 
-if (!file_exists($indexFile) || (time() - filemtime($indexFile)) > $maxAge) {
-    // Run in background so it doesn't slow down the page
-    if (PHP_OS_FAMILY === 'Windows') {
-        pclose(popen('start /B php ' . __DIR__ . '/build_search.php', 'r'));
-    } else {
-        exec('php ' . __DIR__ . '/build_search.php > /dev/null 2>&1 &');
-    }
+$isEmpty = !file_exists($indexFile) || filesize($indexFile) < 10;
+$isStale = file_exists($indexFile) && (time() - filemtime($indexFile)) > $maxAge;
+$isLocked = file_exists($lockFile) && (time() - filemtime($lockFile)) < 60;
+
+if (($isEmpty || $isStale) && !$isLocked) {
+    // Write lock so no other page load triggers a second build
+    file_put_contents($lockFile, time());
+    
+    ob_start();
+    include $builderFile;
+    ob_end_clean();
+    
+    // Remove lock when done
+    unlink($lockFile);
 }
 ?>
