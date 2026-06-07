@@ -55,8 +55,9 @@ a { color: inherit; }
 ===================== */
 /* Navigation Bar Container */
 /* Navigation Bar Container */
+/* --- Navigation Core --- */
 nav {
-  height: 110px; 
+  height: 110px;
   background: var(--bg-white);
   border-bottom: 3px solid var(--gold);
   display: flex;
@@ -68,77 +69,61 @@ nav {
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
-/* Logo Image Styling */
-.logo-img {
-  /* Force the width to exactly 150px */
-  width: 140px; 
-  /* Remove max-height so it doesn't artificially shrink the logo */
-  height: auto; 
-  display: block;
-}
-
-/* Logo Wrapper */
+/* --- Logo Styling --- */
 .nav-logo {
   display: flex;
   align-items: center;
   text-decoration: none;
   gap: 15px;
-  height: 100%; /* Force logo container to match nav height */
+  height: 100%;
+}
+.logo-img { width: 140px; height: auto; display: block; }
+
+/* Logo Text Wrapper */
+.nav-logo-text {
+  display: flex;
+  flex-direction: column; /* This forces the text to stack */
+  justify-content: center;
+  line-height: 1.1;
 }
 
-.nav-logo-icon {
-    /* Ensure the wrapper doesn't force a small square size */
-    width: auto;
-    height: auto;
-    background: none; /* Remove background if it's no longer needed behind the img */
-    display: flex;
-    align-items: center;
-}
-
-/* Logo Text Styling */
 .nav-logo-text .abbr {
   font-family: 'Libre Baskerville', serif;
   font-size: 20px;
   font-weight: 700;
   color: var(--navy);
-  display: block;
-  line-height: 1.1;
 }
+
 .nav-logo-text .full {
   font-size: 10px;
   color: var(--text-muted);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  margin-top: 2px; /* Small gap between the stacked lines */
 }
 
-/* Nav Links & Items */
+/* --- Nav Links --- */
 .nav-links {
   display: flex;
   align-items: stretch;
   flex: 1;
   margin-left: 30px;
-  height: 100%; /* Ensures links fill the nav height */
+  height: 100%;
 }
-.nav-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
+.nav-item { position: relative; display: flex; align-items: center; }
+
 .nav-item > a {
   display: flex;
   align-items: center;
   gap: 5px;
   padding: 0 15px;
-  height: 120px;
+  height: 100%; /* Changed from 120px to 100% to match container */
   font-size: 13.5px;
   font-weight: 600;
   color: var(--text-dark);
   text-decoration: none;
-  letter-spacing: 0.02em;
   border-bottom: 3px solid transparent;
-  margin-bottom: -3px;
   transition: color 0.15s, border-color 0.15s;
-  white-space: nowrap;
 }
 .nav-item > a:hover,
 .nav-item > a.active {
@@ -146,64 +131,60 @@ nav {
   border-bottom-color: var(--gold);
 }
 
-/* Dropdown */
+/* --- Dropdown Hierarchy --- */
 .nav-dropdown {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   background: var(--bg-white);
-  border: 0.5px solid var(--border);
-  border-top: 2px solid var(--gold);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
   min-width: 230px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  z-index: 200;
   border-radius: 0 0 8px 8px;
 }
 .nav-item:hover .nav-dropdown { display: block; }
+
+/* Category Headers (Top level items in dropdown) */
 .nav-dropdown a {
-  display: block;
-  padding: 10px 20px;
-  font-size: 13px;
-  color: var(--text-mid);
-  text-decoration: none;
-  border-bottom: 0.5px solid #f0f2f4;
-  transition: background 0.1s, color 0.1s, padding-left 0.1s;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--text-mid);
 }
+
+/* 2. Indentation: ONLY links with the class 'sub-link' get this extra padding */
+.nav-dropdown a.sub-link {
+    padding-left: 45px !important; /* The '!' forces this to override other rules */
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+/* 3. Headers: Links WITHOUT 'sub-link' act as category titles */
+.nav-dropdown a:not(.sub-link) {
+    font-weight: 700;
+    color: var(--navy);
+    padding-left: 20px;
+}
+
 .nav-dropdown a:hover {
   background: var(--bg-page);
   color: var(--navy);
-  padding-left: 26px;
 }
 
-/* Search Button */
-/* Search Button Base Styling */
+/* --- Search Button --- */
 .nav-search-btn {
-    margin-left: auto;
-    background: transparent;
-    border: 1px solid var(--border); /* Slightly thicker for better visibility */
-    border-radius: 6px;
-    padding: 8px 16px;
-    cursor: pointer;
-    color: var(--text-muted);
-    font-size: 14px; /* Slightly increased for better readability */
-    font-family: 'Source Sans 3', sans-serif;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.2s ease;
-}
-
-/* Hover & Focus States */
-.nav-search-btn:hover {
-    background-color: #f4f4f4;
-    color: var(--text-dark); /* Ensure it stands out when hovered */
-    border-color: #ccc;
-}
-
-.nav-search-btn:focus {
-    outline: 2px solid var(--primary-color, #0056b3);
-    outline-offset: 2px;
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* Mobile Responsiveness */

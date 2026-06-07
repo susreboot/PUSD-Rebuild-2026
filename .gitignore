@@ -1,0 +1,2 @@
+# Exclude the search index
+/assets/data/search-index.json

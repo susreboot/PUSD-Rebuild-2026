@@ -71,13 +71,7 @@
           <a href="/pages/Programs.php">Title I Programs</a>
         </div>
       </div>
-      <div class="nav-item">
-        <a href="#">Board of Trustees <span class="nav-chevron">▾</span></a>
-        <div class="nav-dropdown">
-          <a href="/pages/Board of Trustees.php">Board Members</a>
-          <a href="/pages/publicDocuments.php">Agendas &amp; Minutes</a>
-        </div>
-      </div>
+      
       <div class="nav-item"><a href="/pages/news.php">News</a></div>
       <div class="nav-item"><a href="https://www.governmentjobs.com/careers/sc?department[0]=Department%20of%20Corrections&category[0]=Education%2C%20Training%20%26%20Library&category[1]=Education&sort=PositionTitle%7CAscending" target="_blank">Careers</a></div>
     </div>
