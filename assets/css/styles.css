@@ -226,7 +226,6 @@ nav {
     justify-content: center;
     padding-top: 120px;   /* pushes inner box down from top */
 }
-
 #search-results::-webkit-scrollbar {
     width: 8px;
 }

@@ -87,7 +87,7 @@
                   z-index:10000;   /* ← add this */
                   padding:20px;">
 
-          <span onclick="document.getElementById('search-overlay').style.display='none'"
+          <span onclick="document.getElementById('search-overlay').style.display='flex'"
                 style="cursor:pointer;float:right;font-size:24px;line-height:20px;color:#666">&times;</span>
           <h3 style="margin-top:0">Search PUSD</h3>
           <input type="text" id="search-input"
