@@ -15,12 +15,12 @@
     <div class="mission-vision-grid">
         <section class="about-card">
             <h2>Our Mission</h2>
-            <p>To provide high-quality academic, vocational, and life skills programs to incarcerated participants, empowering them to unlock their potential, gain gainful employment, and become productive, contributing members of society.</p>
+            <p>Palmetto Unified School District and the South Carolina Department of Corrections will provide students with relevant academic courses, highly effective career-related vocational programs, and necessary like skills to make a positive impact in society.</p>
         </section>
 
         <section class="about-card">
             <h2>Our Vision</h2>
-            <p>To transform lives through education, significantly reducing recidivism in South Carolina by equipping individuals with the skills and credentials necessary for a successful transition back to their communities.</p>
+            <p>Palmetto Unified School District educates and empowers participants to become employablem self-sufficient citizens.</p>
         </section>
     </div>
 
