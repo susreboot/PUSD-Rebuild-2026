@@ -1398,59 +1398,73 @@ html {
     scroll-margin-top: 150px; 
 }
 
-/* Container for the grid */
+/* --- News Modal Grid --- */
 .news-image-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
 }
 
-/* Feature Image: Takes up full width (4 columns) */
-.feature-img {
-    grid-column: span 4;
-    width: 100%;
-    height: 300px; /* Keep this if you want a fixed-height container */
-    object-fit: contain; /* Change from 'cover' to 'contain' */
-    background-color: #f0f0f0; /* Optional: adds a background color if the image doesn't fill the container perfectly */
-    border-radius: 4px;
-}
-
-/* Gallery Images: Standard grid size */
-.gallery-img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-    .news-image-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .feature-img {
-        grid-column: span 2; /* Span 2 on mobile */
-    }
-}
-
-/* Style for images that should fill the space (like Weaver) */
-.feature-fill {
-    grid-column: span 4;
+/* Force the hero images to span all 3 columns */
+.feature-fill, .feature-contain {
+    grid-column: 1 / -1; 
     width: 100%;
     height: 300px;
-    object-fit: cover; 
-    border-radius: 4px;
-}
-
-/* Style for images that should show fully (like Lakin) */
-.feature-contain {
-    grid-column: span 4;
-    width: 100%;
-    height: 300px;
-    object-fit: contain; 
+    border-radius: 6px;
     background-color: #f0f0f0;
-    border-radius: 4px;
+}
+
+.feature-fill img, .feature-contain img {
+    width: 100%;
+    height: 100%;
+}
+
+.feature-fill, .feature-contain {
+    grid-column: 1 / -1; /* Spans all 3 columns */
+    width: 100%;
+    max-height: 300px;  /* Limits how tall the featured image can get */
+    margin-bottom: 15px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.feature-fill img { object-fit: cover; }
+.feature-contain img { object-fit: contain; }
+
+/* The gallery thumbnails */
+.image-link {
+    display: block;
+    width: 100%;
+    height: 200px; /* Uniform height for thumbnails */
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops to fill the thumbnail box */
+    display: block;
+}
+
+.image-link:hover { transform: scale(1.03); }
+
+/* Mobile: Stack to 1 column */
+@media (max-width: 768px) {
+    .news-image-grid {
+        grid-template-columns: 1fr;
+    }
+    .feature-fill, .feature-contain {
+        height: 200px; /* Smaller height on mobile */
+    }
+}
+
+#modal-image-container {
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .footer-col a {

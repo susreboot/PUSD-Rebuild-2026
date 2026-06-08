@@ -71,18 +71,18 @@
         <div class="main-wrap">
           <main>
             <section class="news-section">
-        <div class="section-header">
-          <h2>News &amp; Announcements</h2>
-          <div class="section-header-line"></div>
-          <span class="section-header-tag">Latest</span>
-        </div>
-        
-        <div id="news-container" class="news-grid"></div>
-        
-        <div class="news-footer" style="text-align: center; margin-top: 40px;">
-          <a href="/pages/news.php" class="btn-primary">See All News</a>
-        </div>
-      </section>
+              <div class="section-header">
+                <h2>News &amp; Announcements</h2>
+                <div class="section-header-line"></div>
+                <span class="section-header-tag">Latest</span>
+              </div>
+              
+              <div id="news-container" class="news-grid"></div>
+              
+              <div class="news-footer" style="text-align: center; margin-top: 40px;">
+                <a href="/pages/news.php" class="btn-primary">See All News</a>
+              </div>
+            </section>
 
       <section class="programs-section">
         <div class="section-header">

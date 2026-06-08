@@ -72,19 +72,29 @@ async function openModal(id) {
 
                 let imagesToDisplay = Array.isArray(newsItem.images) ? newsItem.images : [];
 
-                imagesToDisplay.forEach((src, index) => {
-                    const img = document.createElement('img');
-                    img.src = src;
-                    
-                    if (index === 0) {
-                        // Pick the class based on the JSON property, default to 'fill' if not set
-                        const styleClass = newsItem.image_style === 'contain' ? 'feature-contain' : 'feature-fill';
-                        img.className = `modal-img ${styleClass}`;
-                    } else {
-                        img.className = 'modal-img gallery-img';
-                    }
-                    imgContainer.appendChild(img);
-                });
+                    imagesToDisplay.forEach((src, index) => {
+                        // 1. Create the link
+                        const link = document.createElement('a');
+                        link.href = src;
+                        link.target = "_blank";
+                        
+                        // 2. Determine class
+                        if (index === 0) {
+                            // Hero image: gets the special feature class
+                            link.className = newsItem.image_style === 'contain' ? 'feature-contain' : 'feature-fill';
+                        } else {
+                            // Gallery image: gets the standard image-link class
+                            link.className = 'image-link';
+                        }
+
+                        // 3. Create the image
+                        const img = document.createElement('img');
+                        img.src = src;
+
+                        // 4. Assemble
+                        link.appendChild(img);
+                        imgContainer.appendChild(link);
+                    });
                             }
             document.getElementById('news-modal').style.display = 'block';
         }

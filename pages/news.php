@@ -1,16 +1,15 @@
 <?php include __DIR__ . '/../includes/header.php'; ?>
-
-<div style="max-width:1200px; margin:0 auto; padding:52px 40px;">
-  <section class="news-section">
+<div class="main-wrap">
+ <section class="news-section">
     <div class="section-header">
       <h2>News &amp; Announcements</h2>
       <div class="section-header-line"></div>
-      <span class="section-header-tag">Archive</span>
+      <span class="section-header-tag">Latest</span>
     </div>
-    <div id="news-container" class="news-page-grid"></div>
-  </section>
+              
+    <div id="news-container" class="news-grid"></div>
+ </section>
 </div>
-
 <div id="news-modal" class="modal" style="display: none;">
   <div class="modal-box">
     <span class="modal-close">&times;</span>
