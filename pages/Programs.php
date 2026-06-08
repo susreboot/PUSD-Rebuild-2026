@@ -10,7 +10,7 @@
     <div class="programs-grid">
         
         <!-- Adult Education -->
-        <div class="program-item full-width">
+        <div class="program-item full-width" id="adult-education-section">
             <h2>Adult Education Programs</h2>
             <p>Palmetto Unified School District manages twenty-one Adult Education programs dedicated to providing rigorous academic instruction, vocational training, and essential life skills for learners aged twenty-two and older. We recognize that education is a fundamental component of rehabilitative services within the South Carolina Department of Corrections, serving as a catalyst for personal transformation.</p>
             <br>
