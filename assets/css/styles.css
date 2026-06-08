@@ -531,20 +531,19 @@ nav {
   gap: 5px;
 }
 
-.news-card.featured { grid-column: 1 / -1; }
-.news-card.featured { display: grid; grid-template-columns: 300px 1fr; }
+/* Taller featured card */
+.news-card.featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 380px 1fr;  /* was 300px 300px 1fr — simplify to 2 cols */
+  min-height: 280px;                  /* was no min-height */
+}
+
 .news-card.featured .news-card-img {
   height: auto;
+  min-height: 280px;                  /* matches card so image fills the left side */
   font-size: 64px;
   background: linear-gradient(135deg, var(--navy), #0f6e56);
-}
-.news-card.featured .news-card-body { padding: 24px; }
-.news-card.featured .news-title { font-size: 19px; margin-bottom: 10px; }
-.news-body-text {
-  font-size: 13.5px;
-  color: var(--text-muted);
-  line-height: 1.65;
-  margin-bottom: 14px;
 }
 
 /* =====================
@@ -880,6 +879,11 @@ footer {
   .main-wrap { grid-template-columns: 1fr; }
   .sidebar { display: grid; grid-template-columns: repeat(2, 1fr); }
   .footer-top { grid-template-columns: 1fr 1fr; }
+  /* News page has no sidebar so force full width */
+  .main-wrap:has(.news-page-grid) {
+    grid-template-columns: 1fr;
+    padding: 32px 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -891,7 +895,10 @@ footer {
   .hero-sidebar { display: none; }
   .hero h1 { font-size: 30px; }
   .stats-strip { grid-template-columns: repeat(2, 1fr); }
-  .main-wrap { padding: 32px 20px; }
+  .main-wrap {
+    grid-template-columns: 1fr;   /* ← add this, forces ALL main-wraps to single col */
+    padding: 24px 16px;
+  }
   .news-card.featured { grid-template-columns: 1fr; }
   .news-card.featured .news-card-img { height: 140px; }
   .program-cards { grid-template-columns: repeat(2, 1fr); }
@@ -900,6 +907,29 @@ footer {
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .footer-bottom-links a:first-child { margin-left: 0; }
+  .news-page-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .news-page-grid .news-card.featured {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  .news-page-grid .news-card.featured .news-card-img {
+    height: 200px;
+    min-height: unset;
+  }
+
+  .modal-box {
+    width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    padding: 24px 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -907,15 +937,36 @@ footer {
   .hero h1 { font-size: 26px; }
   .program-cards { grid-template-columns: 1fr; }
   .school-grid { grid-template-columns: 1fr 1fr; }
+  .news-page-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Tighten modal padding on very small screens */
+  .modal-box {
+    padding: 20px 16px;
+  }
 }
 
 /* Ensure the grid is responsive and matches your homepage aesthetic */
 .news-page-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));  /* was 320px */
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.news-page-grid .news-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    min-height: 280px;
+}
+
+.news-page-grid .news-card.featured .news-card-img {
+    height: auto;
+    min-height: 280px;
 }
 
 /* Match the card styling from your homepage */
@@ -968,13 +1019,13 @@ footer {
 
 .modal-box {
     background-color: #fefefe;
-    margin: 5% auto;           /* Reduced top margin to allow more height */
-    padding: 40px;             /* More padding for breathing room */
+    margin: 4% auto;
+    padding: 40px;
     border: 1px solid #888;
-    width: 90%;                /* Takes up 90% of the screen width */
-    max-width: 1000px;         /* Allows it to grow up to 1000px wide */
-    max-height: 80vh;          /* Caps height at 80% of the viewport height */
-    overflow-y: auto;          /* Adds a scrollbar inside the box if content is long */
+    width: 92%;
+    max-width: 1000px;      /* was 1000px — sweet spot for readability */
+    max-height: 85vh;      /* was 80vh — a little more breathing room */
+    overflow-y: auto;
     border-radius: 12px;
     position: relative;
 }
@@ -1196,9 +1247,27 @@ footer {
     list-style-type: disc; /* Force the bullets to appear */
 }
 
+/* Force specific items to take full width */
+.program-item.full-width {
+    grid-column: 1 / -1; 
+}
+
+/*Scroll for programs links */
+#adult-education-section,
+#cte-section,
+#efa-section,
+#special-education-section,
+#title-i-section {
+    scroll-margin-top: 150px; /* Adjust this value to your header height */
+}
+
 /* Responsive adjustment: 1 column on mobile, 3 on desktop */
 @media (max-width: 800px) {
-    .program-item.large {
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+    .program-item.large, 
+    .program-item.full-width {
         grid-column: span 1;
     }
 }

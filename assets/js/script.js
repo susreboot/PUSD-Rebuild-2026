@@ -117,3 +117,15 @@ document.getElementById('search-overlay').addEventListener('click', function(e) 
         this.style.display = 'none';
     }
 });
+
+// Scroll for programs page
+window.addEventListener('load', function() {
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            // Because of the CSS scroll-margin-top, this will stop
+            // perfectly in the right spot automatically.
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+});

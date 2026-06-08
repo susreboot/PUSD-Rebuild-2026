@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const isHomePage = window.location.pathname.includes('index.php') || window.location.pathname === '/';
             
             // Limit to 6 items if on homepage, otherwise show all
-            const displayData = isHomePage ? data.slice(0, 6) : data;
+            const displayData = isHomePage ? data.slice(0, 5) : data;
 
             displayData.forEach(item => {
                 const card = document.createElement('a');

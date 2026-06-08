@@ -57,18 +57,19 @@
       <div class="nav-item">
         <a href="#">Schools <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="javascript:void(0);" onclick="handleTabClick('hs')">High Schools (EFA)</a>
           <a href="javascript:void(0);" onclick="handleTabClick('ae')">Adult Education Schools</a>
+          <a href="javascript:void(0);" onclick="handleTabClick('hs')">High Schools (EFA)</a>
           <a href="javascript:void(0);" onclick="scrollToDirectory()">School Directory</a>
         </div>
       </div>
       <div class="nav-item">
         <a href="#">Programs <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="/pages/Programs.php">Career &amp; Technical Education</a>
-          <a href="/pages/Programs.php">Adult Basic Education</a>
-          <a href="/pages/Programs.php">Special Education Services</a>
-          <a href="/pages/Programs.php">Title I Programs</a>
+          <a href="/pages/Programs.php#adult-education-section">Adult Basic Education</a>
+          <a href="/pages/Programs.php#cte-section">Career &amp; Technical Education</a>
+          <a href="/pages/Programs.php#efa-section">Education Finance Act (EFA)</a>
+          <a href="/pages/Programs.php#special-education-section">Special Education Services</a>
+          <a href="/pages/Programs.php#title-i-section">Title I Programs</a>
         </div>
       </div>
       
