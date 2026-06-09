@@ -39,25 +39,21 @@ window.addEventListener('load', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const tab = urlParams.get('tab');
     
+    // 1. Handle Tab Switching (AE/HS)
     if (tab === 'hs' || tab === 'ae') {
-        // 1. Switch the tab
         window.showTab(tab);
-        
-        // 2. Use requestAnimationFrame to ensure the browser has 
-        // finished all layout recalculations (the "reflow")
         requestAnimationFrame(() => {
             const section = document.getElementById('school-directory');
-            if (section) {
-                const headerOffset = 120; // Adjust for your fixed nav height
-                const elementPosition = section.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
+            if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
+    } 
+    
+    // 2. Handle School Directory Scroll
+    else if (tab === 'directory') {
+        setTimeout(() => {
+            const section = document.getElementById('school-directory');
+            if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
     }
 });
 
