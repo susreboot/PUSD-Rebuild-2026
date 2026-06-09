@@ -57,9 +57,9 @@
       <div class="nav-item">
         <a href="#">Schools <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="javascript:void(0);" onclick="handleTabClick('ae')">Adult Education Schools</a>
-          <a href="javascript:void(0);" onclick="handleTabClick('hs')">High Schools (EFA)</a>
-          <a href="javascript:void(0);" onclick="scrollToDirectory()">School Directory</a>
+          <a href="/index.php?tab=ae">Adult Education Schools</a>
+          <a href="/index.php?tab=hs">High Schools (EFA)</a>
+          <a href="/index.php?tab=directory">School Directory</a>
         </div>
       </div>
       <div class="nav-item">

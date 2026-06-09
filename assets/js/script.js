@@ -64,34 +64,22 @@ window.addEventListener('load', () => {
 window.handleTabClick = function(tab) {
     window.showTab(tab);
     
-    const section = document.getElementById('school-directory');
-    if (section) {
-        // Increase this to match CSS scroll-margin-top
-        const headerOffset = 150; 
-        const elementPosition = section.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    // Add a small delay to wait for the DOM to update (showTab)
+    setTimeout(() => {
+        const section = document.getElementById('school-directory');
+        if (section) {
+            const headerOffset = 150; 
+            const elementPosition = section.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
-    }
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }, 150); // 150ms is usually enough for most browsers to handle the layout shift
+
     history.pushState(null, '', `index.php?tab=${tab}`);
-};
-
-window.scrollToDirectory = function() {
-    const section = document.getElementById('school-directory');
-    if (section) {
-        const headerOffset = 150; // Adjust for your fixed navbar height
-        const elementPosition = section.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
-        history.pushState(null, '', 'index.php');
-    }
 };
 
 // Toggle submenu on click for touch devices
@@ -129,3 +117,27 @@ window.addEventListener('load', function() {
         }
     }
 });
+
+
+// Scroll to school directory section when "School Directory" link is clicked
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabParam = urlParams.get('tab');
+
+    if (tabParam === 'ae' || tabParam === 'hs') {
+        handleTabClick(tabParam);
+    } else if (tabParam === 'directory') {
+        // Used a small timeout to ensure the browser has finished layout
+        setTimeout(scrollToDirectory, 300); 
+    }
+});
+
+function scrollToDirectory() {
+    const directorySection = document.getElementById('school-directory');
+    if (directorySection) {
+        directorySection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }
+}

@@ -10,7 +10,7 @@
     <div class="programs-grid">
         
         <!-- Adult Education -->
-        <div class="program-item full-width" id="adult-education-section">
+        <div class="program-item large" id="adult-education-section">
             <h2>Adult Education Programs</h2>
             <p>Palmetto Unified School District manages twenty-one Adult Education programs dedicated to providing rigorous academic instruction, vocational training, and essential life skills for learners aged twenty-two and older. We recognize that education is a fundamental component of rehabilitative services within the South Carolina Department of Corrections, serving as a catalyst for personal transformation.</p>
             <br>
@@ -28,7 +28,7 @@
         </div>
 
         <!-- Career & Technical Education -->
-        <div class="program-item full-width" id="cte-section">
+        <div class="program-item large" id="cte-section">
             <h2>Career and Technical Education (CTE)</h2>
             <p>We offer over 30 CTE programs across 19 locations, including Carpentry, Horticulture, Masonry, Welding, HVAC, and Information Technology. Our curriculum includes 12 areas of certification with instructors certified in their fields.</p>
             <br>
@@ -45,7 +45,7 @@
         </div>
 
         <!-- High Schools (EFA) -->
-        <div class="program-item full-width" id="efa-section">
+        <div class="program-item large" id="efa-section">
             <h2>Education Finance Act (EFA)</h2>
             <p>Palmetto Unified School District operates twelve high schools dedicated to serving students between the ages of seventeen and twenty-one. These campuses are located at Allendale, Broad River, Camille Graham, Kirkland, Lee, MacDougall, Ridgeland, Manning, Tyger River, Trenton, Turbeville, and Wateree.</p>
             <br>
@@ -55,7 +55,7 @@
         </div>
 
         <!-- Special Education -->
-        <div class="program-item full-width" id="special-education-section">
+        <div class="program-item large" id="special-education-section">
             <h2>Special Education Services (SES)</h2>
             <p>We provide services to students up to age 22 with prior special education placement. Students are placed in the least restrictive environment appropriate for their security level, supported by an Individualized Education Plan (IEP).</p>
             <br>
@@ -63,7 +63,7 @@
         </div>
 
         <!-- Title I -->
-        <div class="program-item full-width" id="title-i-section">
+        <div class="program-item large" id="title-i-section">
             <h2>Title I: Federal Assistance and Educational Equity</h2>
             <p>Title I is the cornerstone of federal educational support, representing the largest assistance program for K-12 schools in the United States. Its mission is to ensure that all children—regardless of their economic background—have a fair, equal, and significant opportunity to obtain a high-quality education and reach proficiency on challenging state academic standards. By providing additional resources, our district is able to bridge achievement gaps and provide targeted support to students who need it most.</p>
             <br>
