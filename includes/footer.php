@@ -26,12 +26,11 @@
       </div>
       <div class="footer-col">
         <h4>Programs</h4>
-        <a href="/pages/Programs.php">High Schools (EFA)</a>
-        <a href="/pages/Programs.php">Adult Education</a>
-        <a href="/pages/Programs.php">Career &amp; Technical</a>
-        <a href="/pages/Programs.php">Special Education</a>
-        <a href="/pages/Programs.php">Title I</a>
-        <a href="/pages/Programs.php">NCCER Credentials</a>
+          <a href="/pages/Programs.php#adult-education-section">Adult Basic Education</a>
+          <a href="/pages/Programs.php#cte-section">Career &amp; Technical Education</a>
+          <a href="/pages/Programs.php#efa-section">Education Finance Act (EFA)</a>
+          <a href="/pages/Programs.php#special-education-section">Special Education Services</a>
+          <a href="/pages/Programs.php#title-i-section">Title I Programs</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
