@@ -59,12 +59,16 @@
             <div class="stat-label">Schools Statewide</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">30+</div>
-            <div class="stat-label">CTE Programs</div>
+            <div class="stat-num">2000</div>
+            <div class="stat-label">2026 CTE Industry Credentials</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">12</div>
-            <div class="stat-label">Industry Credentials</div>
+            <div class="stat-num">300</div>
+            <div class="stat-label">2026 High School Equivalency Diploma (HSED)</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">500</div>
+            <div class="stat-label">Employability Skills Certifications</div>
           </div>
         </div>
 
@@ -359,5 +363,17 @@
       highly effective career-related vocational programs, and necessary life skills to make a positive impact in society.
     </p>
   </section>
+
+  <div class="meeting-dates-box" id="meeting-box">
+      <button class="close-box" onclick="document.getElementById('meeting-box').style.display='none'">×</button>
+      <h4>Upcoming Board Meetings</h4>
+      <ul>
+          <li>
+              <div class="date">July 14, 2026 - 6:00 PM</div>
+              <div class="location">District Office Board Room</div>
+          </li>
+      </ul>
+      <a href="/page/calendar.php">View All Dates</a>
+  </div>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

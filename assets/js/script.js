@@ -91,14 +91,30 @@ document.querySelectorAll('.dropdown > a').forEach(item => {
 
 // Open Modal
 function openSearch() {
-    document.getElementById('search-overlay').style.display = 'flex';
-    document.getElementById('search-input').focus();
+    const overlay = document.getElementById('search-overlay');
+    if (overlay) {
+        overlay.style.display = 'flex';
+        // Use a slight timeout so the input focuses after the display change
+        setTimeout(() => {
+            const input = document.getElementById('search-input');
+            if (input) input.focus();
+        }, 50);
+    }
 }
 
-// Close Modal on Overlay Click
+// Close Modal Function (to be used by both the X button and the background click)
+function closeSearch() {
+    const overlay = document.getElementById('search-overlay');
+    if (overlay) {
+        overlay.style.display = 'none';
+    }
+}
+
+// Close Modal on Overlay Click (Background only)
 document.getElementById('search-overlay').addEventListener('click', function(e) {
+    // Only close if they click the background, NOT the search box itself
     if (e.target === this) {
-        this.style.display = 'none';
+        closeSearch();
     }
 });
 
@@ -137,3 +153,14 @@ function scrollToDirectory() {
         });
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.querySelector('.hamburger-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+});

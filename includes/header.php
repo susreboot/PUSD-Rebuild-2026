@@ -34,6 +34,10 @@
       </div>
     </a>
 
+    <button class="hamburger-toggle" aria-label="Menu">
+        <i class="ti ti-menu-2"></i>
+    </button>
+
     <div class="nav-links">
       <div class="nav-item">
         <a href="#" class="active">District Overview <span class="nav-chevron">▾</span></a>
@@ -81,28 +85,29 @@
       style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
               background:rgba(0,0,0,0.45); backdrop-filter:blur(4px);
               z-index:9999; align-items:flex-start; justify-content:center; padding-top:120px;"
-      onclick="if(event.target===this)this.style.display='none'">
+      onclick="if(event.target===this) this.style.display='none'">
 
       <div style="background:white; width:90%; max-width:500px; border-radius:12px;
                   box-shadow:0 10px 25px rgba(0,0,0,0.2); position:relative;
-                  z-index:10000;   /* ← add this */
                   padding:20px;">
 
-          <span onclick="document.getElementById('search-overlay').style.display='flex'"
-                style="cursor:pointer;float:right;font-size:24px;line-height:20px;color:#666">&times;</span>
+          <span onclick="document.getElementById('search-overlay').style.display='none'"
+                style="cursor:pointer; float:right; font-size:24px; line-height:20px; color:#666; padding: 5px;">&times;</span>
+          
           <h3 style="margin-top:0">Search PUSD</h3>
+          
           <input type="text" id="search-input"
                 placeholder="Type at least 3 characters..."
-                style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;
-                        box-sizing:border-box;font-size:16px">
-          <div id="search-results"
-              style="margin-top:15px;max-height:300px;overflow-y:auto;
-                      position:relative; z-index:10001;"> 
+                style="width:100%; padding:12px; border:1px solid #ddd; border-radius:6px;
+                        box-sizing:border-box; font-size:16px">
+          
+          <div id="search-results" style="margin-top:15px; max-height:300px; overflow-y:auto;"> 
           </div>
       </div>
   </div>
 
-    <button id="open-search" class="nav-search-btn" onclick="document.getElementById('search-overlay').style.display='flex'; document.getElementById('search-input').focus();">
-        <i class="ti ti-search"></i> Search
-    </button>
+  <button id="open-search" class="nav-search-btn" 
+          onclick="document.getElementById('search-overlay').style.display='flex'; document.getElementById('search-input').focus();">
+      <i class="ti ti-search"></i> <span>Search</span>
+  </button>
   </nav>

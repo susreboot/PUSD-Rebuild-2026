@@ -19,7 +19,7 @@
           <a href="#">Board of Trustees</a>
           <a href="/pages/Board of Trustees.php" class="sub-link">Board Members</a>
           <a href="/pages/publicDocuments.php" class="sub-link">Agendas & Minutes</a>
-          <a href="#">Strategic Plan</a>
+          <a href="/pages/publicDocuments.php">Strategic Plan</a>
           <a href="/pages/publicDocuments.php">Organizational Chart</a>
           <a href="https://screportcards.com/" target="_blank">District Report Card</a>
           <a href="/pages/calendar.php">District Calendar</a>
@@ -36,19 +36,19 @@
         <h4>Resources</h4>
         <a href="#">Public Documents</a>
         <a href="https://www.doc.sc.gov/policy/policy.html" target="_blank">SCDOC/PUSD Policies</a>
-        <a href="#">ARP ESSER Plan</a>
-        <a href="#">Transaction Register</a>
-        <a href="#">Non-Discrimination Policy</a>
+        <a href="/pages/publicDocuments.php">ARP ESSER Plan</a>
+        <a href="/pages/publicDocuments.php">Transaction Register</a>
+        <a href="/pages/publicDocuments.php">Non-Discrimination Policy</a>
         <a href="https://www.governmentjobs.com/careers/sc?department[0]=Department%20of%20Corrections&category[0]=Education%2C%20Training%20%26%20Library&category[1]=Education&sort=PositionTitle%7CAscending" target="_blank">Career Opportunities</a>
-        <a href="#">SDE Surplus Property</a>
+        <a href="/pages/publicDocuments.php">SDE Surplus Property</a>
       </div>
     </div>
     <hr class="footer-divider">
     <div class="footer-bottom">
       <span>&copy; 2025 Palmetto Unified School District &middot; South Carolina Department of Corrections</span>
       <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Non-Discrimination</a>
+        <a href="/pages/publicDocuments.php">Privacy Policy</a>
+        <a href="/pages/publicDocuments.php">Non-Discrimination</a>
         <a href="https://www.doc.sc.gov/" target="_blank">SCDC Website</a>
       </div>
     </div>
