@@ -23,14 +23,14 @@
           <div class="quick-link-sub">Diplomas &amp; GED transcripts</div>
         </div>
       </a>
-      <a href="/pages/publicDocuments.php" class="quick-link">
+      <a href="/pages/publicDocuments" class="quick-link">
         <div class="quick-link-icon"><i class="ti ti-file-text"></i></div>
         <div>
           <div class="quick-link-text">Public Documents</div>
           <div class="quick-link-sub">Budget, ESSER, policies</div>
         </div>
       </a>
-      <a href="/pages/publicDocuments.php" class="quick-link">
+      <a href="/pages/publicDocuments" class="quick-link">
         <div class="quick-link-icon"><i class="ti ti-calendar-event"></i></div>
         <div>
           <div class="quick-link-text">Board Meetings</div>
@@ -44,7 +44,7 @@
           <div class="quick-link-sub">SC state scorecard</div>
         </div>
       </a>
-      <a href="/pages/publicDocuments.php" class="quick-link">
+      <a href="/pages/publicDocuments" class="quick-link">
         <div class="quick-link-icon"><i class="ti ti-award"></i></div>
         <div>
           <div class="quick-link-text">Strategic Plan</div>
@@ -84,7 +84,7 @@
               <div id="news-container" class="news-grid"></div>
               
               <div class="news-footer" style="text-align: center; margin-top: 40px;">
-                <a href="/pages/news.php" class="btn-primary">See All News</a>
+                <a href="/pages/news" class="btn-primary">See All News</a>
               </div>
             </section>
 
@@ -127,7 +127,7 @@
         </div>
 
         <div class="news-footer" style="text-align: center; margin-top: 40px;">
-          <a href="/pages/Programs.php" class="btn-primary">More Information</a>
+          <a href="/pages/Programs" class="btn-primary">More Information</a>
         </div>
 
       </section>
@@ -294,7 +294,7 @@
               <div class="event-meta">10:00 AM &middot; PUSD District Office</div>
             </div>
           </div>
-          <a href="/pages/calendar.php" class="view-all-link">View Full Calendar <i class="ti ti-arrow-right"></i></a>
+          <a href="/pages/calendar" class="view-all-link">View Full Calendar <i class="ti ti-arrow-right"></i></a>
         </div>
       </div>
 
@@ -373,7 +373,7 @@
               <div class="location">District Office Board Room</div>
           </li>
       </ul>
-      <a href="/pages/calendar.php">View All Dates</a>
+      <a href="/pages/calendar">View All Dates</a>
   </div>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

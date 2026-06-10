@@ -24,7 +24,7 @@
   </div>
 
   <nav>
-    <a class="nav-logo" href="/index.php">
+    <a class="nav-logo" href="/index">
       <div class="nav-logo-icon">
         <img src="/images/PUSDLogo_Revamp.png" alt="PUSD Logo" class="logo-img">
       </div>
@@ -42,17 +42,17 @@
       <div class="nav-item">
         <a href="#" class="active">District Overview <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="/pages/about.php">About PUSD</a>
-          <a href="/pages/about.php" class="sub-link">Beliefs &amp; Principles</a>
-          <a href="/pages/about.php" class="sub-link">Our Vision</a>
-          <a href="/pages/about.php" class="sub-link">Our Mission</a>
-          <a href="/pages/about.php" class="sub-link">Our History</a>
-          <a href="/pages/calendar.php">District Calendar</a>
+          <a href="/pages/about">About PUSD</a>
+          <a href="/pages/about" class="sub-link">Beliefs &amp; Principles</a>
+          <a href="/pages/about" class="sub-link">Our Vision</a>
+          <a href="/pages/about" class="sub-link">Our Mission</a>
+          <a href="/pages/about" class="sub-link">Our History</a>
+          <a href="/pages/calendar">District Calendar</a>
           <a href="#">Board of Trustees</a>
-          <a href="/pages/Board-of-Trustees.php" class="sub-link">Board Members</a>
-          <a href="/pages/publicDocuments.php" class="sub-link">Agendas & Minutes</a>
+          <a href="/pages/Board-of-Trustees" class="sub-link">Board Members</a>
+          <a href="/pages/publicDocuments" class="sub-link">Agendas & Minutes</a>
           <a href="#">Strategic Plan</a>
-          <a href="/pages/publicDocuments.php">Public Documents</a>
+          <a href="/pages/publicDocuments">Public Documents</a>
           <a href="#">Non-Discrimination Policy</a>
           <a href="https://screportcards.com/" target="_blank">District Report Card</a>
           <a href="https://www.doc.sc.gov/policy/policy.html" target="_blank">SCDOC/PUSD Policies</a>
@@ -61,23 +61,23 @@
       <div class="nav-item">
         <a href="#">Schools <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="/index.php?tab=ae">Adult Education Schools</a>
-          <a href="/index.php?tab=hs">High Schools (EFA)</a>
-          <a href="/index.php?tab=directory">School Directory</a>
+          <a href="/index?tab=ae">Adult Education Schools</a>
+          <a href="/index?tab=hs">High Schools (EFA)</a>
+          <a href="/index?tab=directory">School Directory</a>
         </div>
       </div>
       <div class="nav-item">
         <a href="#">Programs <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="/pages/Programs.php#adult-education-section">Adult Basic Education</a>
-          <a href="/pages/Programs.php#cte-section">Career &amp; Technical Education</a>
-          <a href="/pages/Programs.php#efa-section">Education Finance Act (EFA)</a>
-          <a href="/pages/Programs.php#special-education-section">Special Education Services</a>
-          <a href="/pages/Programs.php#title-i-section">Title I Programs</a>
+          <a href="/pages/Programs#adult-education-section">Adult Basic Education</a>
+          <a href="/pages/Programs#cte-section">Career &amp; Technical Education</a>
+          <a href="/pages/Programs#efa-section">Education Finance Act (EFA)</a>
+          <a href="/pages/Programs#special-education-section">Special Education Services</a>
+          <a href="/pages/Programs#title-i-section">Title I Programs</a>
         </div>
       </div>
       
-      <div class="nav-item"><a href="/pages/news.php">News</a></div>
+      <div class="nav-item"><a href="/pages/news">News</a></div>
       <div class="nav-item"><a href="https://www.governmentjobs.com/careers/sc?department[0]=Department%20of%20Corrections&category[0]=Education%2C%20Training%20%26%20Library&category[1]=Education&sort=PositionTitle%7CAscending" target="_blank">Careers</a></div>
     </div>
 

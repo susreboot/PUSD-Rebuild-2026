@@ -13,42 +13,42 @@
       <div class="footer-col">
           <h4>District</h4>
           
-          <a href="/pages/about.php">About PUSD</a>
-          <a href="/pages/about.php" class="sub-link">Beliefs & Principles</a>
-          <a href="/pages/about.php" class="sub-link">History</a>
+          <a href="/pages/about">About PUSD</a>
+          <a href="/pages/about" class="sub-link">Beliefs & Principles</a>
+          <a href="/pages/about" class="sub-link">History</a>
           <a href="#">Board of Trustees</a>
-          <a href="/pages/Board-of-Trustees.php" class="sub-link">Board Members</a>
-          <a href="/pages/publicDocuments.php" class="sub-link">Agendas & Minutes</a>
-          <a href="/pages/publicDocuments.php">Strategic Plan</a>
-          <a href="/pages/publicDocuments.php">Organizational Chart</a>
+          <a href="/pages/Board-of-Trustees" class="sub-link">Board Members</a>
+          <a href="/pages/publicDocuments" class="sub-link">Agendas & Minutes</a>
+          <a href="/pages/publicDocuments">Strategic Plan</a>
+          <a href="/pages/publicDocuments">Organizational Chart</a>
           <a href="https://screportcards.com/" target="_blank">District Report Card</a>
-          <a href="/pages/calendar.php">District Calendar</a>
+          <a href="/pages/calendar">District Calendar</a>
       </div>
       <div class="footer-col">
         <h4>Programs</h4>
-          <a href="/pages/Programs.php#adult-education-section">Adult Basic Education</a>
-          <a href="/pages/Programs.php#cte-section">Career &amp; Technical Education</a>
-          <a href="/pages/Programs.php#efa-section">Education Finance Act (EFA)</a>
-          <a href="/pages/Programs.php#special-education-section">Special Education Services</a>
-          <a href="/pages/Programs.php#title-i-section">Title I Programs</a>
+          <a href="/pages/Programs#adult-education-section">Adult Basic Education</a>
+          <a href="/pages/Programs#cte-section">Career &amp; Technical Education</a>
+          <a href="/pages/Programs#efa-section">Education Finance Act (EFA)</a>
+          <a href="/pages/Programs#special-education-section">Special Education Services</a>
+          <a href="/pages/Programs#title-i-section">Title I Programs</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
         <a href="#">Public Documents</a>
         <a href="https://www.doc.sc.gov/policy/policy.html" target="_blank">SCDOC/PUSD Policies</a>
-        <a href="/pages/publicDocuments.php">ARP ESSER Plan</a>
-        <a href="/pages/publicDocuments.php">Transaction Register</a>
-        <a href="/pages/publicDocuments.php">Non-Discrimination Policy</a>
+        <a href="/pages/publicDocuments">ARP ESSER Plan</a>
+        <a href="/pages/publicDocuments">Transaction Register</a>
+        <a href="/pages/publicDocuments">Non-Discrimination Policy</a>
         <a href="https://www.governmentjobs.com/careers/sc?department[0]=Department%20of%20Corrections&category[0]=Education%2C%20Training%20%26%20Library&category[1]=Education&sort=PositionTitle%7CAscending" target="_blank">Career Opportunities</a>
-        <a href="/pages/publicDocuments.php">SDE Surplus Property</a>
+        <a href="/pages/publicDocuments">SDE Surplus Property</a>
       </div>
     </div>
     <hr class="footer-divider">
     <div class="footer-bottom">
       <span>&copy; 2025 Palmetto Unified School District &middot; South Carolina Department of Corrections</span>
       <div class="footer-bottom-links">
-        <a href="/pages/publicDocuments.php">Privacy Policy</a>
-        <a href="/pages/publicDocuments.php">Non-Discrimination</a>
+        <a href="/pages/publicDocuments">Privacy Policy</a>
+        <a href="/pages/publicDocuments">Non-Discrimination</a>
         <a href="https://www.doc.sc.gov/" target="_blank">SCDC Website</a>
       </div>
     </div>
