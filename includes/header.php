@@ -49,7 +49,7 @@
           <a href="/pages/about.php" class="sub-link">Our History</a>
           <a href="/pages/calendar.php">District Calendar</a>
           <a href="#">Board of Trustees</a>
-          <a href="/pages/Board of Trustees.php" class="sub-link">Board Members</a>
+          <a href="/pages/Board-of-Trustees.php" class="sub-link">Board Members</a>
           <a href="/pages/publicDocuments.php" class="sub-link">Agendas & Minutes</a>
           <a href="#">Strategic Plan</a>
           <a href="/pages/publicDocuments.php">Public Documents</a>

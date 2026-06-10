@@ -373,7 +373,7 @@
               <div class="location">District Office Board Room</div>
           </li>
       </ul>
-      <a href="/page/calendar.php">View All Dates</a>
+      <a href="/pages/calendar.php">View All Dates</a>
   </div>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
