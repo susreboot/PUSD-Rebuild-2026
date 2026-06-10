@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('/assets/data/news.json')
         .then(response => response.json())
         .then(data => {
-
+            console.log(window.location.pathname);
             // Determine if we are on the homepage
             const isHomePage = window.location.pathname.includes('index.php') || window.location.pathname.includes('index.php') || window.location.pathname === '/';
             
