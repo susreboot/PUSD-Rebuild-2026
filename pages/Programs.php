@@ -1,5 +1,7 @@
 <?php include __DIR__ . '/../includes/header.php'; ?>
 
+<title>Palmetto Unified School District - Programs</title>
+
 <main class="content-container">
   <section id="programs-directory">
     <header class="section-header">

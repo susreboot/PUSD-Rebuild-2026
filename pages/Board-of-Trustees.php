@@ -1,5 +1,5 @@
 <?php include __DIR__ . '/../includes/header.php'; ?>
-
+<title>Palmetto Unified School District - Board of Trustees</title>
 <main class="content-container">
     <header class="section-header">
         <h1>Board of Trustees</h1>

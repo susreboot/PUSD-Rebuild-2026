@@ -1,5 +1,7 @@
 <?php include __DIR__ . '/../includes/header.php'; ?>
 
+<title>Palmetto Unified School District - Public Documents</title>
+
 <section id="public-documents">
     <h1>Public Documents</h1>
     <p>Access official district records, governance policies, and fiscal reporting documents.</p>

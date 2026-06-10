@@ -1,5 +1,7 @@
 <?php include __DIR__ . '/includes/header.php'; ?>
 
+<title>Palmetto Unified School District</title>
+
   <section class="hero">
     <div class="hero-content">
       <div class="hero-eyebrow">State of South Carolina</div>

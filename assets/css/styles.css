@@ -186,6 +186,17 @@ nav {
   gap: 8px;
 }
 
+/* This is for menu items without links*/
+.nav-parent {
+    display: block;
+    padding: 10px 20px;
+    padding-left: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    cursor: default;
+}
+
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .nav-search-btn {
@@ -291,6 +302,7 @@ nav {
         border-bottom: 1px solid var(--border);
     }
 }
+
 
 /* =====================
    HERO
@@ -918,7 +930,19 @@ footer {
   margin-left: 22px;
   transition: color 0.12s;
 }
-.footer-bottom-links a:hover { color: #fff; }
+.footer-bottom-links a:hover { 
+    color: #fff; 
+  }
+
+/* This is for the span on the footer menu, to make it uniform */
+
+.footer-section-header {
+    display: block;
+    color: #fff;
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
 
 /* =====================
    RESPONSIVE

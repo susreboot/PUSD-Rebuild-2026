@@ -1,4 +1,5 @@
 <?php include __DIR__ . '/../includes/header.php'; ?>
+<title>Palmetto Unified School District - Calendar</title>
 <section class="calendar-section">
     <h2>District Calendar</h2>
   <div class="calendar-footer" style="margin-top: 50px; text-align: center;">

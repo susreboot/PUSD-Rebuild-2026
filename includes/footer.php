@@ -16,13 +16,16 @@
           <a href="/pages/about">About PUSD</a>
           <a href="/pages/about" class="sub-link">Beliefs & Principles</a>
           <a href="/pages/about" class="sub-link">History</a>
-          <a href="#">Board of Trustees</a>
+          <span class="footer-section-header">Board of Trustees</span>
           <a href="/pages/Board-of-Trustees" class="sub-link">Board Members</a>
           <a href="/pages/publicDocuments" class="sub-link">Agendas & Minutes</a>
-          <a href="/pages/publicDocuments">Strategic Plan</a>
-          <a href="/pages/publicDocuments">Organizational Chart</a>
           <a href="https://screportcards.com/" target="_blank">District Report Card</a>
           <a href="/pages/calendar">District Calendar</a>
+          <a href="/pages/publicDocuments">Public Documents</a>
+          <a href="/pages/publicDocuments" class="sub-link">Strategic Plan</a>
+          <a href="/pages/publicDocuments" class="sub-link">Non-Discrimination Policy</a>
+          <a href="/pages/publicDocuments" class="sub-link">Organizational Chart</a>
+          <a href="https://www.doc.sc.gov/policy/policy.html" target="_blank">SCDOC/PUSD Policies</a>
       </div>
       <div class="footer-col">
         <h4>Programs</h4>

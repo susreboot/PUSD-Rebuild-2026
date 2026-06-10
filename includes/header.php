@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Palmetto Unified School District</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -47,14 +46,14 @@
           <a href="/pages/about" class="sub-link">Our Vision</a>
           <a href="/pages/about" class="sub-link">Our Mission</a>
           <a href="/pages/about" class="sub-link">Our History</a>
-          <a href="/pages/calendar">District Calendar</a>
-          <a href="#">Board of Trustees</a>
+          <span class="nav-parent" style="cursor: default;">Board of Trustees</span>
           <a href="/pages/Board-of-Trustees" class="sub-link">Board Members</a>
           <a href="/pages/publicDocuments" class="sub-link">Agendas & Minutes</a>
-          <a href="#">Strategic Plan</a>
-          <a href="/pages/publicDocuments">Public Documents</a>
-          <a href="#">Non-Discrimination Policy</a>
+          <a href="/pages/calendar">District Calendar</a>
           <a href="https://screportcards.com/" target="_blank">District Report Card</a>
+          <a href="/pages/publicDocuments">Public Documents</a>
+          <a href="/pages/publicDocuments" class="sub-link">Strategic Plan</a>
+          <a href="/pages/publicDocuments" class="sub-link">Non-Discrimination Policy</a>
           <a href="https://www.doc.sc.gov/policy/policy.html" target="_blank">SCDOC/PUSD Policies</a>
         </div>
       </div>
