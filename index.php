@@ -180,7 +180,7 @@
             </div>
             <div class="school-item">
               <div class="school-name">Manning</div>
-              <div class="school-principal">Principal: Vacant</div>
+              <div class="school-principal">Ms. Lakin</div>
               <div class="school-location"><i class="ti ti-map-pin"></i>Columbia, SC</div>
             </div>
             <div class="school-item">
@@ -200,7 +200,7 @@
             </div>
             <div class="school-item">
               <div class="school-name">Tyger River</div>
-              <div class="school-principal">Principal: Vacant</div>
+              <div class="school-principal">Principal: Mr. Bartola</div>
               <div class="school-location"><i class="ti ti-map-pin"></i>Enoree, SC</div>
             </div>
             <div class="school-item">
@@ -227,7 +227,7 @@
             </div>
             <div class="school-item">
               <div class="school-name">Leath</div>
-              <div class="school-principal">Vacant</div>
+              <div class="school-principal">Mr. Bartola</div>
               <div class="school-location"><i class="ti ti-map-pin"></i>Greenwood, SC</div>
             </div>
             <div class="school-item">
@@ -237,7 +237,7 @@
             </div>
             <div class="school-item">
               <div class="school-name">Livesay</div>
-              <div class="school-principal">Ms. Pisa</div>
+              <div class="school-principal">Ms. Anderson</div>
               <div class="school-location"><i class="ti ti-map-pin"></i>Spartanburg, SC</div>
             </div>
             <div class="school-item">
@@ -252,7 +252,7 @@
             </div>
             <div class="school-item">
               <div class="school-name">Perry</div>
-              <div class="school-principal">School Leader: Vacant</div>
+              <div class="school-principal">Mr. Bartola</div>
               <div class="school-location"><i class="ti ti-map-pin"></i>Pelzer, SC</div>
             </div>
           </div>

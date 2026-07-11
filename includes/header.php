@@ -63,6 +63,7 @@
           <a href="/index?tab=ae">Adult Education Schools</a>
           <a href="/index?tab=hs">High Schools (EFA)</a>
           <a href="/index?tab=directory">School Directory</a>
+          <a href="/pages/locations">School Locations</a>
         </div>
       </div>
       <div class="nav-item">
