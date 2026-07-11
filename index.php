@@ -61,16 +61,16 @@
             <div class="stat-label">Schools Statewide</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">2000</div>
+            <div class="stat-num">2093</div>
             <div class="stat-label">2026 CTE Industry Credentials</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">300</div>
+            <div class="stat-num">309</div>
             <div class="stat-label">2026 High School Equivalency Diploma (HSED)</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">500</div>
-            <div class="stat-label">Employability Skills Certifications</div>
+            <div class="stat-num">2957</div>
+            <div class="stat-label">2026 Work-Readiness Credentials</div>
           </div>
         </div>
 
