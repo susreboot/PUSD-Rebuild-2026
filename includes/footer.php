@@ -48,7 +48,7 @@
     </div>
     <hr class="footer-divider">
     <div class="footer-bottom">
-      <span>&copy; 2025 Palmetto Unified School District &middot; South Carolina Department of Corrections</span>
+      <span>&copy; 2026 Palmetto Unified School District &middot; South Carolina Department of Corrections &middot; <a href="https://tech.joshbrade.com">Josh Brade</a></span>
       <div class="footer-bottom-links">
         <a href="/pages/publicDocuments">Privacy Policy</a>
         <a href="/pages/publicDocuments">Non-Discrimination</a>
