@@ -1,8 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('news-container');
-    const modal = document.getElementById('news-modal');
-    const closeBtn = document.querySelector('.modal-close');
-
     // Load News Data
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('news-container');
