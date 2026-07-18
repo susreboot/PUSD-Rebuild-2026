@@ -20,7 +20,7 @@
             
         <section class="about-card">
             <h2>Our Mission</h2>
-            <p>Palmetto Unified School District and the South Carolina Department of Corrections will provide students with relevant academic courses, highly effective career-related vocational programs, and necessary like skills to make a positive impact in society.</p>
+            <p>Palmetto Unified School District and the South Carolina Department of Corrections will provide students with relevant academic courses, highly effective career-related vocational programs, and necessary life skills to make a positive impact in society.</p>
         </section>
     </div>
 
