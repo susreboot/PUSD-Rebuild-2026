@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             console.log(window.location.pathname);
             // Determine if we are on the homepage
-            const isHomePage = (window.location.pathname === '/' || window.location.pathname.endsWith('/index.php') || window.location.pathname === '');
+            const limit = parseInt(container.dataset.limit, 10);
             
             // Limit to 5 items if on homepage, otherwise show all
-            const displayData = isHomePage ? data.slice(0, 5) : data;
+            const displayData = limit ? data.slice(0, limit) : data;
 
             displayData.forEach(item => {
                 const card = document.createElement('a');

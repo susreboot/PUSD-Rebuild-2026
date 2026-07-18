@@ -83,7 +83,7 @@
                 <span class="section-header-tag">Latest</span>
               </div>
               
-              <div id="news-container" class="news-grid"></div>
+              <div id="news-container" data-limit="5" class="news-grid"></div>
               
               <div class="news-footer" style="text-align: center; margin-top: 40px;">
                 <a href="/pages/news" class="btn-primary">See All News</a>
