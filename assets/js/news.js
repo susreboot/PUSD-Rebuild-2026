@@ -4,49 +4,82 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.modal-close');
 
     // Load News Data
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('news-container');
+    const archivedContainer = document.getElementById('archived-news-container');
+    const archivedSection = document.getElementById('archived-news-section');
+    const modal = document.getElementById('news-modal');
+    const closeBtn = document.querySelector('.modal-close');
+
+    // Load News Data
     fetch('/assets/data/news.json')
         .then(response => response.json())
         .then(data => {
-            console.log(window.location.pathname);
-            // Determine if we are on the homepage
-            const limit = parseInt(container.dataset.limit, 10);
-            
-            // Limit to 5 items if on homepage, otherwise show all
-            const displayData = limit ? data.slice(0, limit) : data;
+            const limit = container ? parseInt(container.dataset.limit, 10) : NaN;
 
-            displayData.forEach(item => {
-                const card = document.createElement('a');
-                card.className = item.featured ? "news-card featured" : "news-card";
-                card.href = "#"; // Prevent navigation
-                card.dataset.id = item.id; // Store ID in dataset
+            // Split into recent vs archived (older than 2 years)
+            const twoYearsAgo = new Date();
+            twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
 
-                let mediaContent = item.icon ? `<span class="material-symbols-outlined" style="font-size: 48px;">${item.icon}</span>` : '';
+            const recent = [];
+            const archived = [];
 
-                card.innerHTML = `
-                    <div class="news-card-img">${mediaContent}</div>
-                    <div class="news-card-body">
-                        <div class="news-tag">${item.tag}</div>
-                        <div class="news-title">${item.title}</div>
-                        <div class="news-date"><i class="ti ti-calendar"></i> ${item.date}</div>
-                    </div>
-                `;
-
-                // Add Event Listener instead of onclick
-                card.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openModal(item.id);
-                });
-
-                container.appendChild(card);
+            data.forEach(item => {
+                const itemDate = new Date(item.date);
+                if (!isNaN(itemDate) && itemDate < twoYearsAgo) {
+                    archived.push(item);
+                } else {
+                    recent.push(item);
+                }
             });
+
+            // Apply limit (if set) only to the recent list
+            const displayData = limit ? recent.slice(0, limit) : recent;
+
+            renderCards(displayData, container);
+
+            // Only render/show archive section if it exists on this page
+            if (archivedContainer && archived.length > 0) {
+                renderCards(archived, archivedContainer);
+                archivedSection.style.display = 'block';
+            }
         })
         .catch(err => console.error('Error loading news:', err));
+
+    function renderCards(items, targetContainer) {
+        if (!targetContainer) return;
+
+        items.forEach(item => {
+            const card = document.createElement('a');
+            card.className = item.featured ? "news-card featured" : "news-card";
+            card.href = "#";
+            card.dataset.id = item.id;
+
+            let mediaContent = item.icon ? `<span class="material-symbols-outlined" style="font-size: 48px;">${item.icon}</span>` : '';
+
+            card.innerHTML = `
+                <div class="news-card-img">${mediaContent}</div>
+                <div class="news-card-body">
+                    <div class="news-tag">${item.tag}</div>
+                    <div class="news-title">${item.title}</div>
+                    <div class="news-date"><i class="ti ti-calendar"></i> ${item.date}</div>
+                </div>
+            `;
+
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(item.id);
+            });
+
+            targetContainer.appendChild(card);
+        });
+    }
 
     // Modal Close Listeners
     if (closeBtn) {
         closeBtn.addEventListener('click', closeModal);
     }
-    
+
     if (modal) {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();

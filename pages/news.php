@@ -12,6 +12,17 @@
               
     <div id="news-container" class="news-grid"></div>
  </section>
+
+  <section class="news-section archived-news-section" id="archived-news-section" style="display: none;">
+    <div class="section-header">
+      <h2>Archived News</h2>
+      <div class="section-header-line"></div>
+      <span class="section-header-tag">Older than 2 years</span>
+    </div>
+
+    <div id="archived-news-container" class="news-grid"></div>
+ </section>
+
 </div>
 <div id="news-modal" class="modal" style="display: none;">
   <div class="modal-box">
